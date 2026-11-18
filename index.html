@@ -217,6 +217,15 @@
         <span class="cnt" id="catCount"></span>
       </div>
       <div class="grid" id="grid"></div>
+      <div class="pager" id="pager" hidden>
+        <button class="pg-b" id="pgPrev" aria-label="Página anterior">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <span class="pg-n" id="pgNum"></span>
+        <button class="pg-b" id="pgNext" aria-label="Próxima página">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
     </div>
     <div class="cat-foot rv">
       <p><b>Não achou o que procurava?</b> A loja trabalha com encomenda de itens religiosos e esotéricos. Chame no WhatsApp que a gente verifica.</p>
@@ -705,7 +714,7 @@ async function carregarCatalogo(){
       .sort((a,b) => (+a.ordem||99999) - (+b.ordem||99999))
       .forEach(p => PRODUTOS.push({
         n: p.nome, c: p.categoria, d: p.descricao || '', i: p.foto || '',
-        sku: p.sku || '', pr: formatarPreco(p.preco)
+        sku: p.sku || '', pr: formatarPreco(p.preco), v: p.variacao || ''
       }));
 
     CATS.length = 0;
@@ -741,33 +750,80 @@ const CATS = [
   {n:"Guias, Colares e Amuletos", i:"img/raw-guias.jpg", d:"Guias, colares e amuletos de proteção"}
 ];
 
-let orcamento = [], filtro = CATS[0].n;
+let orcamento = [], filtro = CATS[0].n, pagina = 1;
+const POR_PAGINA = 12; /* 3 fileiras de 4 colunas no desktop */
 const grid = document.getElementById('grid');
 const catGrid = document.getElementById('catGrid'), prodView = document.getElementById('prodView');
+
+/* chave de identidade de carrinho: sku, ou nome+variacao quando nao tem sku */
+const cid = p => p.sku || (p.n + (p.v ? '|' + p.v : ''));
+
+/* agrupa produtos da mesma categoria em "cartoes": produtos com Variacao
+   preenchida e mesmo nome viram 1 cartao com seletor de variantes; os
+   demais (variacao em branco) ficam cada um no seu proprio cartao, mesmo
+   que existam nomes repetidos na planilha. */
+function cartoesDe(catNome){
+  const itens = PRODUTOS.filter(p => p.c === catNome);
+  const grupos = new Map();
+  const lista = [];
+  itens.forEach(p => {
+    if(p.v){
+      const gk = 'grupo:' + chave(p.c) + '::' + chave(p.n);
+      let g = grupos.get(gk);
+      if(!g){
+        g = {tipo:'grupo', ref: gk, n: p.n, c: p.c, d: p.d, variantes: [], ativa: p};
+        grupos.set(gk, g);
+        lista.push(g);
+      }
+      g.variantes.push(p);
+    } else {
+      lista.push({tipo:'simples', ref: cid(p), n: p.n, c: p.c, d: p.d, i: p.i, pr: p.pr, p});
+    }
+  });
+  lista.forEach(c => { if(c.tipo === 'grupo'){ c.i = c.ativa.i; c.pr = c.ativa.pr; } });
+  return lista;
+}
 
 const CHAVE = 'emporiodafe:orcamento';
 function salvar(){ try{ localStorage.setItem(CHAVE, JSON.stringify(orcamento)); }catch(e){} }
 function recuperar(){
   try{
     const g = JSON.parse(localStorage.getItem(CHAVE) || '[]');
-    if(Array.isArray(g)) orcamento = g.filter(x => x && x.n && PRODUTOS.some(p => p.n === x.n))
-                                      .map(x => ({n: x.n, q: Math.max(1, Math.min(99, +x.q || 1))}));
+    if(!Array.isArray(g)) return;
+    orcamento = g.map(x => {
+      if(!x) return null;
+      if(x.cid){
+        if(!PRODUTOS.some(p => cid(p) === x.cid)) return null;
+        return {cid: x.cid, n: x.n || '', v: x.v || '', q: Math.max(1, Math.min(99, +x.q || 1))};
+      }
+      if(x.n){ /* formato antigo, de antes das variacoes */
+        const p = PRODUTOS.find(p => p.n === x.n);
+        if(!p) return null;
+        return {cid: cid(p), n: p.n, v: p.v || '', q: Math.max(1, Math.min(99, +x.q || 1))};
+      }
+      return null;
+    }).filter(Boolean);
   }catch(e){}
 }
-const naLista = n => orcamento.some(x => x.n === n);
-const qtdDe   = n => (orcamento.find(x => x.n === n) || {}).q || 0;
+const naLista = ref => orcamento.some(x => x.cid === ref);
+const qtdDe   = ref => (orcamento.find(x => x.cid === ref) || {}).q || 0;
 
-function addItem(n){
-  const it = orcamento.find(x => x.n === n);
-  if(it){ orcamento = orcamento.filter(x => x.n !== n); aviso(n + ' saiu da lista'); }
-  else { orcamento.push({n, q: 1}); aviso(n + ' entrou no orçamento'); pulaFab(); }
+function addItem(ref){
+  const it = orcamento.find(x => x.cid === ref);
+  if(it){ orcamento = orcamento.filter(x => x.cid !== ref); aviso('Item saiu da lista'); }
+  else {
+    const p = PRODUTOS.find(x => cid(x) === ref);
+    if(!p) return;
+    orcamento.push({cid: ref, n: p.n, v: p.v || '', q: 1});
+    aviso(p.n + (p.v ? ' (' + p.v + ')' : '') + ' entrou no orçamento'); pulaFab();
+  }
   salvar(); atualizar(); render(); pintarModal();
 }
-function mudarQtd(n, d){
-  const it = orcamento.find(x => x.n === n);
+function mudarQtd(ref, d){
+  const it = orcamento.find(x => x.cid === ref);
   if(!it) return;
   it.q += d;
-  if(it.q < 1) orcamento = orcamento.filter(x => x.n !== n);
+  if(it.q < 1) orcamento = orcamento.filter(x => x.cid !== ref);
   if(it.q > 99) it.q = 99;
   salvar(); atualizar(); render(); pintarModal();
 }
@@ -778,7 +834,7 @@ function renderCats(){
       ${imgTag(c.i, c.n)}
       <span class="ccard-in">
         <b>${c.n}</b>
-        <i>${PRODUTOS.filter(p => p.c === c.n).length} itens
+        <i>${cartoesDe(c.n).length} itens
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </i>
       </span>
@@ -793,9 +849,10 @@ function renderCats(){
 
 function abrirCat(nome, scroll = true){
   filtro = nome;
+  pagina = 1;
   catGrid.hidden = true; prodView.hidden = false;
   document.getElementById('catTitle').textContent = nome;
-  const q = PRODUTOS.filter(p => p.c === nome).length;
+  const q = cartoesDe(nome).length;
   document.getElementById('catCount').textContent = `${q} ${q === 1 ? 'item' : 'itens'}`;
   render();
   location.hash = 'c=' + encodeURIComponent(nome);
@@ -809,33 +866,65 @@ function verCategorias(scroll = true){
 }
 document.getElementById('voltar').onclick = () => verCategorias();
 
-function render(){
-  const itens = PRODUTOS.filter(p => p.c === filtro);
-  grid.innerHTML = itens.map((p, i) => `
-    <article class="card" data-prod="${p.n}" style="--i:${i}">
+function cartaoHTML(c, i){
+  const ref = c.tipo === 'grupo' ? cid(c.ativa) : c.ref;
+  const marcado = naLista(ref);
+  return `
+    <article class="card" data-prod="${c.ref}" data-nome="${c.n}" style="--i:${i}">
       <div class="card-img">
-        ${imgTag(p.i, p.n)}
-        <span class="card-tag">${p.c}</span>
+        ${imgTag(c.i, c.n)}
+        <span class="card-tag">${c.c}</span>
       </div>
       <div class="card-in">
-        <h3>${p.n}</h3>
-        <p>${p.d}</p>
+        <h3>${c.n}</h3>
+        <p>${c.d}</p>
+        ${c.tipo === 'grupo' ? `<span class="card-var">${c.variantes.length} opções: ${c.variantes.map(v => v.v).join(', ')}</span>` : ''}
         <div class="card-foot">
-          <span class="price">${p.pr || 'Sob consulta'}</span>
-          <button class="add${naLista(p.n) ? ' done' : ''}" data-add="${p.n}">${naLista(p.n) ? '&#10003; ' + qtdDe(p.n) + ' na lista' : '+ Orçamento'}</button>
+          <span class="price">${c.pr || 'Sob consulta'}</span>
+          <button class="add${marcado ? ' done' : ''}" data-add="${ref}">${marcado ? '&#10003; ' + qtdDe(ref) + ' na lista' : '+ Orçamento'}</button>
         </div>
       </div>
-    </article>`).join('');
+    </article>`;
+}
+
+const pager = document.getElementById('pager'), pgPrev = document.getElementById('pgPrev'), pgNext = document.getElementById('pgNext'), pgNum = document.getElementById('pgNum');
+function renderPager(total, totalPaginas){
+  if(!pager) return;
+  if(totalPaginas <= 1){ pager.hidden = true; return; }
+  pager.hidden = false;
+  pgNum.textContent = `${pagina} de ${totalPaginas}`;
+  pgPrev.disabled = pagina <= 1;
+  pgNext.disabled = pagina >= totalPaginas;
+}
+if(pgPrev) pgPrev.onclick = () => { if(pagina > 1){ pagina--; render(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'}); } };
+if(pgNext) pgNext.onclick = () => { pagina++; render(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'}); };
+
+function render(){
+  const todos = cartoesDe(filtro);
+  const totalPaginas = Math.max(1, Math.ceil(todos.length / POR_PAGINA));
+  if(pagina > totalPaginas) pagina = totalPaginas;
+  const inicio = (pagina - 1) * POR_PAGINA;
+  const itens = todos.slice(inicio, inicio + POR_PAGINA);
+  grid.innerHTML = itens.map((c, i) => cartaoHTML(c, i)).join('');
   marcarImgs();
+  renderPager(todos.length, totalPaginas);
 }
 
 const modal = document.getElementById('modal'), modalIn = document.getElementById('modalIn');
 let produtoAberto = null;
 
-function abrirProduto(nome){
-  const p = PRODUTOS.find(x => x.n === nome);
-  if(!p) return;
-  produtoAberto = p;
+function abrirProduto(ref){
+  let grupo = null, p = null;
+  if(String(ref).startsWith('grupo:')){
+    const c = cartoesDe(filtro).find(x => x.tipo === 'grupo' && x.ref === ref);
+    if(!c) return;
+    grupo = c;
+    p = c.ativa;
+  } else {
+    p = PRODUTOS.find(x => cid(x) === ref);
+    if(!p) return;
+  }
+  produtoAberto = {grupo, p};
   pintarModal();
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -846,26 +935,30 @@ function fecharProduto(){
   document.body.style.overflow = '';
 }
 function pintarModal(){
-  const p = produtoAberto;
-  if(!p) return;
-  const q = qtdDe(p.n);
+  const pa = produtoAberto;
+  if(!pa) return;
+  const grupo = pa.grupo, p = pa.p;
+  const ref = cid(p);
+  const q = qtdDe(ref);
+  const chips = grupo ? `<div class="vchips">${grupo.variantes.map(v => `<button class="vchip${v === p ? ' on' : ''}" data-vsel="${grupo.ref}" data-vcid="${cid(v)}">${v.v}</button>`).join('')}</div>` : '';
   modalIn.innerHTML = `
     <div class="m-img">${imgTag(p.i, p.n)}</div>
     <div class="m-txt">
       <span class="m-cat">${p.c}</span>
-      <h3>${p.n}</h3>
+      <h3>${p.n}${grupo ? ' — ' + p.v : ''}</h3>
+      ${chips}
       <p class="m-preco">${p.pr || 'Preço sob consulta'}</p>
       <p>${p.d || ''}</p>
       <div class="m-acao">
         ${q ? `<div class="qtd">
-                 <button data-q="-1" data-qn="${p.n}" aria-label="Menos um">-</button>
+                 <button data-q="-1" data-qn="${ref}" aria-label="Menos um">-</button>
                  <b>${q}</b>
-                 <button data-q="1" data-qn="${p.n}" aria-label="Mais um">+</button>
+                 <button data-q="1" data-qn="${ref}" aria-label="Mais um">+</button>
                </div>
-               <button class="btn btn-out" data-add="${p.n}">Tirar da lista</button>`
-             : `<button class="btn btn-bordo" data-add="${p.n}">+ Adicionar ao orçamento</button>`}
+               <button class="btn btn-out" data-add="${ref}">Tirar da lista</button>`
+             : `<button class="btn btn-bordo" data-add="${ref}">+ Adicionar ao orçamento</button>`}
       </div>
-      <a class="m-wa" href="${waLink('Olá! Vim pelo site do Empório da Fé. Tenho interesse neste item: ' + p.n + (p.pr ? ', vi no site por ' + p.pr : '') + '. Ainda está disponível?')}" target="_blank" rel="noopener">Perguntar sobre este item no WhatsApp</a>
+      <a class="m-wa" href="${waLink('Olá! Vim pelo site do Empório da Fé. Tenho interesse neste item: ' + p.n + (grupo ? ' (' + p.v + ')' : '') + (p.pr ? ', vi no site por ' + p.pr : '') + '. Ainda está disponível?')}" target="_blank" rel="noopener">Perguntar sobre este item no WhatsApp</a>
     </div>`;
 }
 if(modal){
@@ -880,6 +973,17 @@ document.addEventListener('click', e => {
   const cat = e.target.closest('[data-cat]');
   if(cat){ e.preventDefault(); abrirCat(cat.dataset.cat); return; }
 
+  const vsel = e.target.closest('[data-vsel]');
+  if(vsel){
+    e.preventDefault(); e.stopPropagation();
+    const grupo = produtoAberto && produtoAberto.grupo;
+    if(grupo && grupo.ref === vsel.dataset.vsel){
+      const nv = grupo.variantes.find(v => cid(v) === vsel.dataset.vcid);
+      if(nv){ grupo.ativa = nv; produtoAberto.p = nv; pintarModal(); }
+    }
+    return;
+  }
+
   const q = e.target.closest('[data-q]');
   if(q){ e.preventDefault(); mudarQtd(q.dataset.qn, +q.dataset.q); return; }
 
@@ -887,7 +991,7 @@ document.addEventListener('click', e => {
   if(add){ e.preventDefault(); e.stopPropagation(); addItem(add.dataset.add); return; }
 
   const rm = e.target.closest('[data-rm]');
-  if(rm){ orcamento = orcamento.filter(x => x.n !== rm.dataset.rm); salvar(); atualizar(); render(); return; }
+  if(rm){ orcamento = orcamento.filter(x => x.cid !== rm.dataset.rm); salvar(); atualizar(); render(); return; }
 
   const prod = e.target.closest('[data-prod]');
   if(prod){ abrirProduto(prod.dataset.prod); return; }
@@ -902,15 +1006,15 @@ function atualizar(){
     return;
   }
   dBody.innerHTML = orcamento.map(it => {
-    const p = PRODUTOS.find(x => x.n === it.n);
+    const p = PRODUTOS.find(x => cid(x) === it.cid);
     if(!p) return '';
     return `<div class="d-item">
       <div class="d-thumb">${imgTag(p.i, '')}</div>
-      <div class="d-nome"><b>${p.n}</b><span>${p.c}${p.pr ? ' · ' + p.pr : ''}</span></div>
+      <div class="d-nome"><b>${p.n}${it.v ? ' — ' + it.v : ''}</b><span>${p.c}${p.pr ? ' · ' + p.pr : ''}</span></div>
       <div class="qtd sm">
-        <button data-q="-1" data-qn="${p.n}" aria-label="Menos um">-</button>
+        <button data-q="-1" data-qn="${it.cid}" aria-label="Menos um">-</button>
         <b>${it.q}</b>
-        <button data-q="1" data-qn="${p.n}" aria-label="Mais um">+</button>
+        <button data-q="1" data-qn="${it.cid}" aria-label="Mais um">+</button>
       </div>
     </div>`;
   }).join('');
@@ -931,8 +1035,9 @@ document.getElementById('send').onclick = () => {
   if(nome) msg += `Meu nome é ${nome}.\n`;
   msg += `\nGostaria de um orçamento ${n === 1 ? 'deste item' : 'destes ' + n + ' itens'}:\n\n`;
   msg += orcamento.map((it, i) => {
-    const p = PRODUTOS.find(y => y.n === it.n) || {};
-    return `${i + 1}. ${it.q}x ${it.n}${p.pr ? ' — ' + p.pr + ' cada' : ''}`;
+    const p = PRODUTOS.find(y => cid(y) === it.cid) || {};
+    const nomeCompleto = it.n + (it.v ? ' (' + it.v + ')' : '');
+    return `${i + 1}. ${it.q}x ${nomeCompleto}${p.pr ? ' — ' + p.pr + ' cada' : ''}`;
   }).join('\n');
   msg += '\n\nPodem confirmar valor e disponibilidade?';
   if(obs) msg += `\n\nObservação: ${obs}`;
@@ -1053,7 +1158,7 @@ if(buscaCat){
     const q = e.target.value.trim().toLowerCase();
     if(!prodView.hidden){
       grid.querySelectorAll('.card').forEach(c => {
-        c.style.display = c.dataset.prod.toLowerCase().includes(q) ? '' : 'none';
+        c.style.display = (c.dataset.nome || '').toLowerCase().includes(q) ? '' : 'none';
       });
     } else {
       catGrid.querySelectorAll('.ccard').forEach(c => {

@@ -233,6 +233,17 @@ nav.desk a:hover{color:var(--bordo);border-color:var(--bordo)}
 .add{background:#fff;border:1.5px solid var(--bordo);color:var(--bordo);border-radius:6px;padding:8px 13px;font-size:.8rem;font-weight:600;white-space:nowrap;transition:.18s}
 .add:hover{background:var(--bordo);color:#fff}
 .add.done{background:var(--bordo-dk);border-color:var(--bordo-dk);color:#fff}
+.card-var{font-size:.76rem;color:var(--bordo-dk);font-weight:600;background:var(--soft);border-radius:5px;padding:5px 8px;display:inline-block;width:fit-content}
+.pager{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:30px}
+.pg-b{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--bordo-dk);display:grid;place-items:center;transition:.18s}
+.pg-b svg{width:17px;height:17px}
+.pg-b:hover:not(:disabled){border-color:var(--bordo);color:var(--bordo)}
+.pg-b:disabled{opacity:.35;cursor:default}
+.pg-n{font-size:.86rem;font-weight:600;color:var(--gray)}
+.vchips{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 2px}
+.vchip{border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:600;transition:.18s}
+.vchip:hover{border-color:var(--bordo)}
+.vchip.on{background:var(--bordo);border-color:var(--bordo);color:#fff}
 .cat-foot{margin-top:34px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
 .cat-foot p{font-size:.92rem;color:var(--gray);max-width:60ch}
 .cat-foot b{color:var(--ink)}
