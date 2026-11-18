@@ -131,7 +131,7 @@
       <div><b>Encomenda sob consulta</b><span>combine pelo WhatsApp</span></div>
     </div>
     <div class="tk-item"><div><b data-count="2" data-pre="+" data-suf=" mil">+2 mil</b><span>seguidores no Instagram</span></div></div>
-    <div class="tk-item"><div><b data-count="10">10</b><span>categorias no catálogo</span></div></div>
+    <div class="tk-item"><div><b data-count="10" id="numCats">10</b><span>categorias no catálogo</span></div></div>
     <div class="tk-item"><div><b>Penedo</b><span>Centro Histórico</span></div></div>
     <div class="tk-item"><div><b>Baixo São Francisco</b><span>região atendida</span></div></div>
     <div class="tk-item tk-dup" aria-hidden="true">
@@ -147,7 +147,7 @@
       <div><b>Encomenda sob consulta</b><span>combine pelo WhatsApp</span></div>
     </div>
     <div class="tk-item tk-dup" aria-hidden="true"><div><b>+2 mil</b><span>seguidores no Instagram</span></div></div>
-    <div class="tk-item tk-dup" aria-hidden="true"><div><b>10</b><span>categorias no catálogo</span></div></div>
+    <div class="tk-item tk-dup" aria-hidden="true"><div><b id="numCatsDup">10</b><span>categorias no catálogo</span></div></div>
     <div class="tk-item tk-dup" aria-hidden="true"><div><b>Penedo</b><span>Centro Histórico</span></div></div>
     <div class="tk-item tk-dup" aria-hidden="true"><div><b>Baixo São Francisco</b><span>região atendida</span></div></div>
   </div>
@@ -786,6 +786,9 @@ function renderCats(){
   marcarImgs();
   const footCats = document.getElementById('footCats');
   if(footCats) footCats.innerHTML = CATS.map(c => `<a href="#catalogo" data-cat="${c.n}">${c.n}</a>`).join('');
+  const numCats = document.getElementById('numCats'), numCatsDup = document.getElementById('numCatsDup');
+  if(numCats){ numCats.dataset.count = CATS.length; numCats.textContent = CATS.length; }
+  if(numCatsDup) numCatsDup.textContent = CATS.length;
 }
 
 function abrirCat(nome, scroll = true){
