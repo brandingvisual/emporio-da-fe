@@ -498,16 +498,7 @@
       </div>
       <div class="f-col">
         <b class="t">Categorias</b>
-        <a href="#catalogo" data-cat="Imagens de Orixás">Imagens de Orixás</a>
-        <a href="#catalogo" data-cat="Guias e Assessórios">Guias e Assessórios</a>
-        <a href="#catalogo" data-cat="Velas e Artigos Rituais">Velas e Artigos Rituais</a>
-        <a href="#catalogo" data-cat="Ervas e Defumações">Ervas e Defumações</a>
-        <a href="#catalogo" data-cat="Banhos">Banhos</a>
-        <a href="#catalogo" data-cat="Bebidas Rituais">Bebidas Rituais</a>
-        <a href="#catalogo" data-cat="Adagas e Punhais">Adagas e Punhais</a>
-        <a href="#catalogo" data-cat="Favas">Favas</a>
-        <a href="#catalogo" data-cat="Aguidás e Louças">Aguidás e Louças</a>
-        <a href="#catalogo" data-cat="Vestuário">Vestuário</a>
+        <div id="footCats"></div>
       </div>
       <div class="f-col">
         <b class="t">Contato</b>
@@ -793,6 +784,8 @@ function renderCats(){
       </span>
     </button>`).join('');
   marcarImgs();
+  const footCats = document.getElementById('footCats');
+  if(footCats) footCats.innerHTML = CATS.map(c => `<a href="#catalogo" data-cat="${c.n}">${c.n}</a>`).join('');
 }
 
 function abrirCat(nome, scroll = true){
