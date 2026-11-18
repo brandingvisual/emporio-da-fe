@@ -3,415 +3,1254 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Empório da Fé | Casa de Umbanda e Candomblé - Penedo/AL</title>
-<meta name="description" content="A maior loja de artigos religiosos afro-brasileiros do Baixo São Francisco. Orixás, guias, velas, ervas e muito mais. Peça pelo WhatsApp.">
+<title>Empório da Fé | Artigos religiosos de Umbanda e Candomblé em Penedo AL</title>
+<meta name="description" content="Casa de Umbanda e Candomblé em Penedo, Alagoas. Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento e fale pelo WhatsApp.">
+<meta name="author" content="Empório da Fé">
+<meta name="theme-color" content="#6B1620">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Empório da Fé">
+<meta property="og:title" content="Empório da Fé | Artigos religiosos de Umbanda e Candomblé">
+<meta property="og:description" content="Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento pelo catálogo e envie pelo WhatsApp.">
+
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="img/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["Store", "LocalBusiness"],
+  "name": "Empório da Fé",
+  "description": "Casa de Umbanda e Candomblé com artigos religiosos afro-brasileiros em Penedo, Alagoas.",
+  "telephone": "+5582996451238",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Nilo Peçanha, 54, Centro Histórico",
+    "addressLocality": "Penedo",
+    "addressRegion": "AL",
+    "addressCountry": "BR"
+  },
+  "areaServed": { "@type": "Place", "name": "Penedo e Baixo São Francisco, Alagoas" },
+  "sameAs": ["https://www.instagram.com/emporiodafe/"]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bordo:#6b1620;
-    --bordo-escuro:#4a0f17;
-    --dourado:#c9a24b;
-    --dourado-claro:#e8d9ad;
-    --creme:#fbf6ec;
-    --texto:#2b2320;
-    --whats:#25D366;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{
-    font-family:'Poppins',sans-serif;
-    background:var(--creme);
-    color:var(--texto);
-    line-height:1.6;
-  }
-  h1,h2,h3,.brand{font-family:'Playfair Display',serif;}
-  a{text-decoration:none;color:inherit;}
-  img{max-width:100%;display:block;}
-  .container{max-width:1180px;margin:0 auto;padding:0 20px;}
+:root{
+  --bordo:#6B1620;
+  --bordo-dk:#4A0F17;
+  --bordo-xdk:#2E0A0F;
+  --dourado:#C9A24B;
+  --dourado-cl:#E8D9AD;
+  --wa:#25D366;
+  --wa-dk:#1DA851;
+  --ink:#241613;
+  --gray:#6E6058;
+  --line:#E7DED1;
+  --soft:#FBF6EC;
+  --white:#fff;
+  --max:1200px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  background:var(--white);color:var(--ink);line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;font-size:16px;
+}
+img{max-width:100%;display:block}
+[hidden]{display:none !important}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+.wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.15;letter-spacing:-.02em;font-weight:700}
+h2{font-size:clamp(1.6rem,3vw,2.15rem)}
+h3{font-size:1.05rem;font-weight:600}
+.label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--bordo)}
+.sec{padding:72px 0}
+.sec-soft{background:var(--soft)}
+.sec-head{max-width:620px;margin-bottom:34px}
+.sec-head h2{margin:10px 0 12px}
+.sec-head p{color:var(--gray);font-size:1rem}
 
-  /* HEADER */
-  header{
-    position:sticky;top:0;z-index:50;
-    background:var(--bordo-escuro);
-    box-shadow:0 2px 14px rgba(0,0,0,.25);
-  }
-  .nav{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:12px 20px;max-width:1180px;margin:0 auto;
-  }
-  .nav .brand{
-    display:flex;align-items:center;gap:10px;
-    color:var(--dourado-claro);font-size:1.25rem;font-weight:700;
-  }
-  .nav .brand img{width:44px;height:44px;border-radius:50%;border:2px solid var(--dourado);}
-  .nav-links{display:flex;gap:26px;}
-  .nav-links a{color:var(--creme);font-size:.95rem;font-weight:500;transition:color .2s;}
-  .nav-links a:hover{color:var(--dourado-claro);}
-  .nav-cta{
-    background:var(--whats);color:#fff;padding:9px 18px;border-radius:30px;
-    font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:6px;
-    white-space:nowrap;
-  }
-  .menu-toggle{display:none;background:none;border:none;color:var(--creme);font-size:1.6rem;cursor:pointer;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 22px;border-radius:6px;font-size:.92rem;font-weight:600;transition:background .18s,color .18s,border-color .18s}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:var(--wa-dk)}
+.btn-bordo{background:var(--bordo);color:#fff}
+.btn-bordo:hover{background:var(--bordo-dk)}
+.btn-out{border:1.5px solid var(--line);color:var(--ink)}
+.btn-out:hover{border-color:var(--bordo);color:var(--bordo)}
+.btn-white-out{border:1.5px solid rgba(255,255,255,.55);color:#fff}
+.btn-white-out:hover{background:#fff;color:var(--ink);border-color:#fff}
 
-  /* HERO */
-  .hero{
-    position:relative;
-    background:
-      linear-gradient(135deg, rgba(74,15,23,.88), rgba(107,22,32,.82)),
-      url('images/orixas-1.jpg') center/cover no-repeat;
-    color:var(--creme);
-    padding:90px 20px 80px;
-    text-align:center;
-    overflow:hidden;
-  }
-  .hero::after{
-    content:"";position:absolute;inset:0;
-    background:radial-gradient(circle at 50% 0%, rgba(201,162,75,.18), transparent 60%);
-    pointer-events:none;
-  }
-  .hero-logo{width:120px;height:120px;border-radius:50%;margin:0 auto 22px;border:3px solid var(--dourado);box-shadow:0 0 0 6px rgba(201,162,75,.15);}
-  .hero h1{font-size:2.6rem;font-weight:800;margin-bottom:14px;color:#fff;}
-  .hero .subtitulo{font-family:'Playfair Display',serif;font-style:italic;color:var(--dourado-claro);font-size:1.25rem;margin-bottom:18px;}
-  .hero p{max-width:620px;margin:0 auto 30px;font-size:1.05rem;color:var(--dourado-claro);opacity:.95;}
-  .hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-  .btn{
-    display:inline-flex;align-items:center;gap:8px;
-    padding:14px 28px;border-radius:32px;font-weight:600;font-size:1rem;
-    transition:transform .2s, box-shadow .2s;
-  }
-  .btn-whats{background:var(--whats);color:#fff;box-shadow:0 6px 18px rgba(37,211,102,.35);}
-  .btn-outline{border:2px solid var(--dourado-claro);color:var(--dourado-claro);}
-  .btn:hover{transform:translateY(-2px);}
+.topbar{background:var(--bordo-xdk);color:rgba(255,255,255,.82);font-size:.78rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;height:38px}
+.topbar ul{display:flex;gap:22px;list-style:none}
+.topbar li{display:flex;align-items:center;gap:7px}
+.topbar svg{width:13px;height:13px;opacity:.75}
+.topbar a:hover{color:#fff}
 
-  /* FAIXA DESTAQUES */
-  .faixa{
-    background:var(--dourado);color:var(--bordo-escuro);
-    padding:12px 0;overflow:hidden;white-space:nowrap;font-weight:600;font-size:.92rem;
-  }
-  .faixa-track{display:inline-block;padding-left:100%;animation:marquee 22s linear infinite;}
-  @keyframes marquee{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
-  .faixa span{margin:0 30px;}
+header{position:sticky;top:0;z-index:200;background:#fff;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:18px;height:72px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo img{width:54px;height:54px;flex:none;border-radius:50%}
+footer .logo img{background:#fff;padding:2px;border-radius:50%}
+.logo b{font-size:1.02rem;font-weight:700;letter-spacing:-.02em;display:block;line-height:1.1}
+.logo span{font-size:.66rem;color:var(--gray);letter-spacing:.1em;text-transform:uppercase}
+nav.desk{display:flex;gap:26px}
+nav.desk a{font-size:.9rem;font-weight:500;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent}
+nav.desk a:hover{color:var(--bordo);border-color:var(--bordo)}
+.burger{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:6px;align-items:center;justify-content:center}
+.burger span{display:block;width:17px;height:2px;background:var(--ink);position:relative}
+.burger span::before,.burger span::after{content:'';position:absolute;left:0;width:17px;height:2px;background:var(--ink)}
+.burger span::before{top:-5px}.burger span::after{top:5px}
+.mobnav{display:none;position:fixed;inset:110px 0 0;z-index:190;background:#fff;padding:24px 20px;flex-direction:column}
+.mobnav.open{display:flex}
+.mobnav a{font-size:1.1rem;font-weight:500;padding:16px 0;border-bottom:1px solid var(--line)}
+.mobnav .btn{margin-top:20px}
 
-  /* SECTION TITLES */
-  .section{padding:70px 0;}
-  .section-title{text-align:center;margin-bottom:12px;font-size:2rem;color:var(--bordo);}
-  .section-sub{text-align:center;color:#7a6f63;max-width:560px;margin:0 auto 42px;font-size:.98rem;}
-  .ornamento{width:70px;height:3px;background:var(--dourado);margin:0 auto 42px;border-radius:3px;}
+/* BANNER */
+.banner{position:relative;min-height:560px;display:flex;align-items:center;background:var(--bordo-xdk);overflow:hidden}
+.banner-img{position:absolute;inset:0}
+.banner-img img{width:100%;height:100%;object-fit:cover}
+.banner-img::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(46,10,15,.95) 0%,rgba(46,10,15,.86) 40%,rgba(46,10,15,.4) 62%,rgba(46,10,15,.12) 82%,rgba(46,10,15,.08) 100%);
+}
+.banner .wrap{position:relative;z-index:2;padding-top:70px;padding-bottom:70px}
+.banner-in{max-width:620px;color:#fff}
+.banner .label{color:var(--dourado-cl)}
+.banner h1{font-size:clamp(2rem,4.6vw,3.15rem);margin:14px 0 16px;font-weight:700;letter-spacing:-.01em}
+.banner p{font-size:1.06rem;color:rgba(255,255,255,.88);max-width:52ch}
+.banner-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.banner-cta .btn{padding:15px 26px;font-size:.96rem}
+.bstrip{position:relative;z-index:2;background:rgba(255,255,255,.97);border-top:1px solid var(--line)}
+.bstrip .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;padding:0}
+.bs{display:flex;align-items:center;gap:12px;padding:18px 20px}
+.bs + .bs{border-left:1px solid var(--line)}
+.bs svg{width:22px;height:22px;color:var(--bordo);flex:none}
+.bs b{display:block;font-size:.88rem;font-weight:600}
+.bs span{font-size:.78rem;color:var(--gray)}
 
-  /* SOBRE */
-  .sobre{background:#fff;}
-  .sobre-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;}
-  .sobre-img{border-radius:16px;overflow:hidden;box-shadow:0 18px 40px rgba(107,22,32,.18);}
-  .sobre-texto h2{color:var(--bordo);font-size:1.9rem;margin-bottom:16px;}
-  .sobre-texto p{margin-bottom:14px;color:#4a413a;}
-  .infos-rapidas{margin-top:24px;display:grid;gap:14px;}
-  .info-item{display:flex;gap:12px;align-items:flex-start;}
-  .info-icone{
-    width:38px;height:38px;border-radius:50%;background:var(--dourado-claro);
-    display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.1rem;
-  }
-  .info-item b{color:var(--bordo-escuro);}
+/* NUMEROS */
+.nums{border-bottom:1px solid var(--line)}
+.nums .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding-top:28px;padding-bottom:28px;text-align:center}
+.nums b{display:block;font-size:1.6rem;font-weight:800;color:var(--bordo-dk);letter-spacing:-.03em}
+.nums span{font-size:.8rem;color:var(--gray)}
 
-  /* CATEGORIAS */
-  .categorias{background:var(--creme);}
-  .cat-grid{
-    display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
-  }
-  .cat-card{
-    background:#fff;border-radius:14px;overflow:hidden;text-align:center;
-    box-shadow:0 8px 24px rgba(0,0,0,.06);transition:transform .25s, box-shadow .25s;
-    cursor:pointer;border:1px solid #eee2ce;
-  }
-  .cat-card:hover{transform:translateY(-6px);box-shadow:0 16px 32px rgba(107,22,32,.15);}
-  .cat-emoji{
-    font-size:2.1rem;background:linear-gradient(135deg,var(--bordo),var(--bordo-escuro));
-    padding:30px 0;color:var(--dourado-claro);
-  }
-  .cat-card h3{font-size:1rem;color:var(--bordo-escuro);padding:16px 10px 18px;font-family:'Poppins',sans-serif;font-weight:600;}
+/* COMO FUNCIONA */
+.como{background:var(--soft)}
+.como-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:passo}
+.passo{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;padding:28px 24px 26px;transition:transform .25s cubic-bezier(.2,.7,.3,1),box-shadow .25s,border-color .2s}
+.passo:hover{transform:translateY(-5px);box-shadow:0 16px 32px -16px rgba(74,15,23,.35);border-color:var(--dourado)}
+.passo-n{width:40px;height:40px;border-radius:50%;background:var(--bordo);color:#fff;display:grid;place-items:center;font-weight:800;font-size:1.05rem;margin-bottom:16px}
+.passo h3{margin-bottom:8px;font-size:1.08rem}
+.passo p{font-size:.92rem;color:var(--gray)}
+.passo-seta{position:absolute;top:34px;right:-30px;width:30px;color:var(--dourado);z-index:2}
+@media(max-width:900px){.passo-seta{display:none}}
+.como-cta{display:flex;justify-content:center;margin-top:30px}
 
-  /* PRODUTOS */
-  .produtos{background:#fff;}
-  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
-  .prod-card{
-    background:var(--creme);border-radius:16px;overflow:hidden;
-    box-shadow:0 10px 26px rgba(0,0,0,.07);display:flex;flex-direction:column;
-    transition:transform .25s;
-  }
-  .prod-card:hover{transform:translateY(-5px);}
-  .prod-img{aspect-ratio:3/4;overflow:hidden;}
-  .prod-img img{width:100%;height:100%;object-fit:cover;}
-  .prod-info{padding:16px 16px 20px;flex:1;display:flex;flex-direction:column;}
-  .prod-tag{font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--dourado);font-weight:700;margin-bottom:6px;}
-  .prod-info h4{font-size:1.02rem;color:var(--bordo-escuro);margin-bottom:6px;}
-  .prod-info p{font-size:.85rem;color:#7a6f63;margin-bottom:14px;flex:1;}
-  .prod-preco{font-weight:700;color:var(--bordo);margin-bottom:12px;font-size:.95rem;}
-  .prod-preco small{display:block;font-weight:400;color:#a99;font-size:.72rem;}
-  .btn-produto{
-    background:var(--whats);color:#fff;text-align:center;padding:10px;border-radius:10px;
-    font-size:.88rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;
-  }
+/* SOBRE */
+.about{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:center}
+.about-img{border-radius:8px;overflow:hidden;aspect-ratio:1/1.02}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.about ul{list-style:none;margin:22px 0 26px;display:grid;gap:12px}
+.about li{display:flex;gap:11px;font-size:.95rem;color:var(--gray)}
+.about li svg{width:18px;height:18px;color:var(--bordo);flex:none;margin-top:3px}
+.about-cta{display:flex;gap:12px;flex-wrap:wrap}
 
-  /* SERVICOS / CONSULTAS */
-  .servicos{
-    background:linear-gradient(135deg,var(--bordo-escuro),var(--bordo));
-    color:var(--creme);
-  }
-  .servicos .section-title, .servicos .section-sub{color:var(--dourado-claro);}
-  .servicos .ornamento{background:var(--dourado-claro);}
-  .serv-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
-  .serv-card{
-    background:rgba(255,255,255,.06);border:1px solid rgba(201,162,75,.3);
-    border-radius:16px;padding:30px;backdrop-filter:blur(2px);
-  }
-  .serv-card h3{color:var(--dourado-claro);font-size:1.3rem;margin-bottom:10px;}
-  .serv-card p{opacity:.9;margin-bottom:16px;font-size:.95rem;}
-  .serv-preco{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:4px;}
-  .serv-preco s{opacity:.6;font-weight:400;font-size:1rem;margin-right:8px;}
+/* CATALOGO */
+.cat-bar{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:26px}
+.cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.ccard{position:relative;aspect-ratio:4/3;border-radius:8px;overflow:hidden;border:1px solid var(--line);display:block;text-align:left}
+.ccard img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ccard:hover img{transform:scale(1.05)}
+.ccard::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(46,10,15,.92) 0%,rgba(46,10,15,.45) 45%,rgba(46,10,15,.08) 100%)}
+.ccard-in{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:16px;color:#fff}
+.ccard-in b{display:block;font-size:1.05rem;font-weight:700;letter-spacing:-.02em}
+.ccard-in i{display:inline-flex;align-items:center;gap:6px;font-style:normal;font-size:.78rem;font-weight:600;color:var(--dourado-cl);margin-top:9px}
+.ccard-in i svg{width:14px;height:14px}
+.cat-nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.voltar{display:inline-flex;align-items:center;gap:7px;font-size:.86rem;font-weight:600;color:var(--bordo-dk);border:1px solid var(--line);background:#fff;border-radius:6px;padding:9px 14px}
+.voltar:hover{border-color:var(--bordo);color:var(--bordo)}
+.voltar svg{width:15px;height:15px}
+.cat-nav h3{font-size:1.25rem;font-weight:700}
+.cat-nav .cnt{font-size:.84rem;color:var(--gray)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .25s,transform .25s cubic-bezier(.2,.7,.3,1)}
+.card:hover{border-color:#DCCBB0;box-shadow:0 14px 28px -14px rgba(74,15,23,.4);transform:translateY(-4px)}
+.card-img{aspect-ratio:4/3;overflow:hidden;background:var(--soft);position:relative}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .card-img img{transform:scale(1.04)}
+.card-tag{position:absolute;top:10px;left:10px;background:rgba(255,255,255,.95);font-size:.64rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bordo-dk);padding:4px 9px;border-radius:4px}
+.card-in{padding:15px;display:flex;flex-direction:column;flex:1;gap:5px}
+.card-in h3{font-size:1rem}
+.card-in p{font-size:.82rem;color:var(--gray);flex:1;line-height:1.45}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;padding-top:12px;border-top:1px solid var(--line)}
+.price{font-size:.88rem;color:var(--bordo-dk);font-weight:700;line-height:1.3}
+.add{background:#fff;border:1.5px solid var(--bordo);color:var(--bordo);border-radius:6px;padding:8px 13px;font-size:.8rem;font-weight:600;white-space:nowrap;transition:.18s}
+.add:hover{background:var(--bordo);color:#fff}
+.add.done{background:var(--bordo-dk);border-color:var(--bordo-dk);color:#fff}
+.cat-foot{margin-top:34px;padding:22px;background:#fff;border:1px solid var(--line);border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.cat-foot p{font-size:.92rem;color:var(--gray);max-width:60ch}
+.cat-foot b{color:var(--ink)}
 
-  /* LOCALIZACAO */
-  .localizacao{background:var(--creme);}
-  .loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
-  .loc-card{background:#fff;border-radius:18px;padding:36px;box-shadow:0 14px 34px rgba(0,0,0,.07);}
-  .loc-card h3{color:var(--bordo);margin-bottom:18px;font-size:1.4rem;}
-  .loc-item{display:flex;gap:14px;margin-bottom:18px;align-items:flex-start;}
-  .loc-item .ic{font-size:1.3rem;}
-  .loc-item b{display:block;color:var(--bordo-escuro);margin-bottom:2px;}
-  .mapa-wrap{border-radius:18px;overflow:hidden;box-shadow:0 14px 34px rgba(0,0,0,.07);height:100%;min-height:320px;}
-  .mapa-wrap iframe{width:100%;height:100%;min-height:320px;border:0;}
+/* FAIXA */
+.faixa{position:relative;padding:64px 0;color:#fff;overflow:hidden}
+.faixa-img{position:absolute;inset:0;background:linear-gradient(120deg,var(--bordo-xdk),var(--bordo-dk))}
+.faixa .wrap{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap}
+.faixa h2{font-size:clamp(1.4rem,2.6vw,1.9rem);max-width:24ch}
+.faixa p{color:rgba(255,255,255,.85);font-size:.95rem;margin-top:8px;max-width:46ch}
 
-  /* CTA FINAL */
-  .cta-final{
-    text-align:center;padding:80px 20px;
-    background:
-      linear-gradient(135deg, rgba(74,15,23,.92), rgba(107,22,32,.88)),
-      url('images/orixas-2.jpg') center/cover;
-    color:#fff;
-  }
-  .cta-final h2{font-size:2.1rem;margin-bottom:14px;color:#fff;}
-  .cta-final p{color:var(--dourado-claro);margin-bottom:28px;}
+/* INSTAGRAM */
+.ig{overflow:hidden}
+.ig-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:40px;align-items:center}
+.ig-txt{max-width:360px}
+.ig-txt .btn{margin-top:22px}
+.devices{display:flex;align-items:center;justify-content:center;gap:26px;position:relative}
+.laptop{width:400px;flex:none}
+.laptop-screen{background:#111;border-radius:14px 14px 0 0;padding:14px 14px 0;box-shadow:0 20px 44px -18px rgba(74,15,23,.5)}
+.laptop-bar{display:flex;gap:5px;padding-bottom:10px}
+.laptop-bar span{width:8px;height:8px;border-radius:50%;background:#444}
+.laptop-inner{background:#fff;border-radius:6px 6px 0 0;overflow:hidden;aspect-ratio:16/11}
+.laptop-base{height:14px;background:linear-gradient(180deg,#2a2a2a,#161616);border-radius:0 0 10px 10px;position:relative}
+.laptop-base::after{content:'';position:absolute;left:50%;top:0;transform:translateX(-50%);width:70px;height:5px;background:#3a3a3a;border-radius:0 0 6px 6px}
+.phone{width:168px;flex:none;border:8px solid #111;border-radius:30px;background:#111;box-shadow:0 20px 44px -16px rgba(74,15,23,.55);position:relative;z-index:2}
+.phone-screen{border-radius:22px;overflow:hidden;aspect-ratio:9/19.5;background:#fff;position:relative}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:58px;height:16px;background:#111;border-radius:0 0 10px 10px;z-index:3}
+.igui-head{display:flex;align-items:center;gap:8px;padding:10px 10px 8px;border-bottom:1px solid #eee}
+.igui-ava{width:30px;height:30px;border-radius:50%;overflow:hidden;flex:none;border:1.5px solid var(--dourado)}
+.igui-ava img{width:100%;height:100%;object-fit:cover}
+.igui-name{font-size:.62rem;font-weight:700}
+.igui-sub{font-size:.52rem;color:var(--gray)}
+.igui-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px}
+.igui-grid div{aspect-ratio:1/1;overflow:hidden}
+.igui-grid img{width:100%;height:100%;object-fit:cover}
+.laptop .igui-head{padding:16px 16px 12px}
+.laptop .igui-ava{width:46px;height:46px}
+.laptop .igui-name{font-size:.95rem}
+.laptop .igui-sub{font-size:.78rem}
+.laptop .igui-grid{gap:3px}
+@media(max-width:900px){
+  .ig-grid{grid-template-columns:1fr}
+  .devices{flex-direction:column}
+  .laptop{width:300px}
+  .phone{display:none}
+}
 
-  /* FOOTER */
-  footer{background:var(--bordo-escuro);color:var(--dourado-claro);padding:40px 20px 20px;text-align:center;font-size:.88rem;}
-  footer .brand{color:#fff;font-size:1.2rem;margin-bottom:10px;}
-  footer .aviso{max-width:640px;margin:20px auto 0;opacity:.75;font-size:.78rem;line-height:1.5;}
+/* CONSULTAS */
+.cons-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.cons{border:1px solid var(--line);border-radius:10px;padding:26px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.cons h3{font-size:1.1rem}
+.cons p{font-size:.9rem;color:var(--gray);flex:1}
+.cons .price{font-size:1.1rem;margin-top:6px}
 
-  /* WHATSAPP FLUTUANTE */
-  .whats-float{
-    position:fixed;bottom:22px;right:22px;z-index:60;
-    background:var(--whats);color:#fff;width:58px;height:58px;border-radius:50%;
-    display:flex;align-items:center;justify-content:center;font-size:1.6rem;
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-  }
+/* FAQ */
+.faq{max-width:760px}
+.faq details{border:1px solid var(--line);border-radius:8px;background:#fff;margin-bottom:10px;overflow:hidden}
+.faq summary{padding:16px 46px 16px 18px;font-weight:600;font-size:.97rem;cursor:pointer;position:relative;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:1.2rem;color:var(--bordo);font-weight:400}
+.faq details[open] summary::after{content:'\2212'}
+.faq details[open] summary{border-bottom:1px solid var(--line)}
+.faq .r{padding:14px 18px 18px;font-size:.93rem;color:var(--gray)}
+.faq .r a{font-weight:600}
 
-  @media(max-width:900px){
-    .sobre-grid, .serv-grid, .loc-grid{grid-template-columns:1fr;}
-    .cat-grid{grid-template-columns:repeat(2,1fr);}
-    .prod-grid{grid-template-columns:repeat(2,1fr);}
-    .nav-links{display:none;}
-    .menu-toggle{display:block;}
-    .hero h1{font-size:2rem;}
-  }
+/* LOCAL */
+.loc{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;align-items:start}
+.loc-map{border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;aspect-ratio:1000/560;background:#fff}
+.loc-map iframe{width:100%;height:100%;border:0;display:block}
+.loc-info{border:1px solid var(--line);border-radius:8px;padding:26px;background:#fff}
+.loc-info h3{font-size:1.15rem;margin-bottom:4px}
+.loc-info .end{font-size:.95rem;color:var(--gray);margin-bottom:20px}
+.loc-row{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--line)}
+.loc-row svg{width:18px;height:18px;color:var(--bordo);flex:none;margin-top:3px}
+.loc-row b{display:block;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);font-weight:600;margin-bottom:2px}
+.loc-row p{font-size:.92rem}
+.loc-info .btn{width:100%;margin-top:18px}
+
+/* FOOTER */
+footer{background:var(--bordo-xdk);color:rgba(255,255,255,.72);padding:54px 0 22px;font-size:.88rem}
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:34px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.14)}
+footer .logo b{color:#fff}
+footer .logo span{color:rgba(255,255,255,.5)}
+.f-grid > div > p{margin-top:14px;max-width:32ch;line-height:1.6}
+.f-col b.t{display:block;color:#fff;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.f-col a,.f-col p{display:block;padding:4px 0}
+.f-col a:hover{color:var(--dourado-cl)}
+.f-bot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:20px;font-size:.78rem;color:rgba(255,255,255,.45)}
+
+/* FLUTUANTES */
+.wa-float{position:fixed;right:18px;bottom:88px;z-index:300;width:56px;height:56px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 22px -6px rgba(0,0,0,.45);transition:transform .2s}
+.wa-float:hover{transform:scale(1.07)}
+.wa-float svg{width:30px;height:30px;color:#fff}
+.fab{position:fixed;right:18px;bottom:18px;z-index:300;background:var(--bordo-dk);color:#fff;border-radius:8px;padding:13px 18px;display:flex;align-items:center;gap:9px;font-size:.88rem;font-weight:600;box-shadow:0 8px 22px -8px rgba(0,0,0,.5)}
+.fab svg{width:17px;height:17px}
+.fab-n{background:var(--dourado);color:var(--bordo-xdk);border-radius:999px;min-width:21px;height:21px;display:grid;place-items:center;font-size:.74rem;font-weight:700;padding:0 6px}
+.dbg{position:fixed;inset:0;background:rgba(46,10,15,.5);z-index:400;opacity:0;pointer-events:none;transition:.25s}
+.dbg.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(410px,100%);z-index:401;background:#fff;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .32s ease}
+.drawer.open{transform:none}
+.d-head{padding:22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
+.d-head h3{font-size:1.15rem}
+.d-head p{font-size:.82rem;color:var(--gray);margin-top:3px}
+.d-close{width:34px;height:34px;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center;color:var(--gray);flex:none}
+.d-body{flex:1;overflow-y:auto;padding:16px 22px}
+.d-item{display:flex;gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.d-thumb{width:46px;height:46px;border-radius:6px;overflow:hidden;flex:none;background:var(--soft)}
+.d-thumb img{width:100%;height:100%;object-fit:cover}
+.d-item b{font-size:.88rem;font-weight:600;display:block}
+.d-item span{font-size:.74rem;color:var(--gray)}
+.qtd{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.qtd button{width:34px;height:38px;font-size:1.05rem;font-weight:600;color:var(--bordo-dk);background:#fff}
+.qtd button:hover{background:var(--soft)}
+.qtd b{min-width:30px;text-align:center;font-size:.92rem}
+.qtd.sm button{width:26px;height:28px;font-size:.9rem}
+.qtd.sm b{min-width:22px;font-size:.84rem}
+.d-nome{flex:1;min-width:0}
+.d-nome b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.d-nome span{display:block}
+.d-empty{text-align:center;padding:46px 10px;color:var(--gray);font-size:.9rem;line-height:1.6}
+.d-foot{padding:18px 22px 22px;border-top:1px solid var(--line);background:var(--soft)}
+.d-foot label{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);font-weight:600;display:block;margin-bottom:6px}
+.d-foot input,.d-foot textarea{width:100%;border:1px solid var(--line);border-radius:6px;padding:11px 13px;font-family:inherit;font-size:.9rem;margin-bottom:12px;resize:vertical;background:#fff}
+.d-foot input:focus,.d-foot textarea:focus{outline:2px solid var(--bordo);outline-offset:0}
+.d-foot .btn{width:100%}
+
+/* FICHA DO PRODUTO */
+.modal{position:fixed;inset:0;z-index:500;background:rgba(46,10,15,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .28s}
+.modal.open{display:flex;opacity:1}
+.m-card{background:#fff;border-radius:10px;width:min(820px,100%);max-height:90vh;overflow:auto;position:relative;display:flex;flex-direction:column;transform:translateY(18px) scale(.985);opacity:0;transition:transform .34s cubic-bezier(.2,.8,.3,1),opacity .34s}
+.modal.open .m-card{transform:none;opacity:1}
+.m-fechar{position:absolute;top:12px;right:12px;z-index:2;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.94);border:1px solid var(--line);display:grid;place-items:center;font-size:1rem;color:var(--ink)}
+.m-in{display:grid;grid-template-columns:1fr 1fr}
+.m-img{background:var(--soft);aspect-ratio:1/1}
+.m-img img{width:100%;height:100%;object-fit:cover}
+.m-txt{padding:30px 28px;display:flex;flex-direction:column}
+.m-cat{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--bordo)}
+.m-txt h3{font-size:1.5rem;font-weight:700;margin:6px 0 4px;letter-spacing:-.02em}
+.m-preco{font-size:1.1rem;font-weight:800;color:var(--bordo-dk);margin-bottom:10px}
+.m-txt p{font-size:.95rem;color:var(--gray);flex:1}
+.m-acao{display:flex;align-items:center;gap:10px;margin:18px 0 12px;flex-wrap:wrap}
+.m-acao .btn{flex:1;min-width:150px}
+.m-wa{font-size:.86rem;font-weight:600;color:var(--bordo);border-top:1px solid var(--line);padding-top:14px}
+.m-wa:hover{color:var(--bordo-dk)}
+
+/* VOLTAR AO TOPO */
+#topo{position:fixed;left:18px;bottom:18px;z-index:290;width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;box-shadow:0 6px 18px -8px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s}
+#topo.on{opacity:1;pointer-events:auto}
+#topo:hover{transform:translateY(-3px)}
+#topo svg{width:19px;height:19px;color:var(--bordo-dk)}
+.fab.cheio{background:var(--bordo)}
+
+/* STATUS */
+.st{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:rgba(255,255,255,.72)}
+.st::before{content:'';width:7px;height:7px;border-radius:50%;background:#9CA3AF}
+.st.on{color:var(--dourado-cl)}
+.st.on::before{background:var(--dourado);box-shadow:0 0 0 3px rgba(201,162,75,.28)}
+
+@media(max-width:1000px){
+  .grid,.cat-grid{grid-template-columns:repeat(2,1fr)}
+  .about,.loc{grid-template-columns:1fr;gap:30px}
+  .como-grid{grid-template-columns:1fr}
+  .cons-grid{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  nav.desk,.topbar ul li:nth-child(2){display:none}
+  .burger{display:flex}
+  .bar .btn{display:none}
+  .banner{min-height:auto;display:block}
+  .banner .wrap{padding-top:54px;padding-bottom:54px}
+  .bstrip .wrap{grid-template-columns:1fr}
+  .bs + .bs{border-left:none;border-top:1px solid var(--line)}
+}
+@media(max-width:620px){
+  .sec{padding:52px 0}
+  .grid{grid-template-columns:1fr 1fr;gap:12px}
+  .cat-grid{grid-template-columns:1fr;gap:12px}
+  .ccard{aspect-ratio:16/9}
+  .card-in{padding:12px}
+  .card-in h3{font-size:.9rem}
+  .card-in p{display:none}
+  .nums .wrap{grid-template-columns:1fr 1fr;gap:18px}
+  .topbar .wrap{justify-content:center}
+  .topbar ul li:first-child{display:none}
+  .f-grid{grid-template-columns:1fr;gap:26px}
+  .cat-foot{flex-direction:column;align-items:flex-start}
+  .fab{right:14px;bottom:14px;padding:13px 18px}
+  #topo{left:14px;bottom:14px;width:40px;height:40px}
+  .m-in{grid-template-columns:1fr}
+  .m-img{aspect-ratio:16/10}
+  .m-txt{padding:22px 20px}
+  .modal{padding:0}
+  .m-card{max-height:100vh;border-radius:0}
+}
+
+/* ===================== EFEITOS ===================== */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important}
+  html{scroll-behavior:auto}
+}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .75s cubic-bezier(.2,.7,.3,1),transform .75s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.09s}.rv.d2{transition-delay:.18s}.rv.d3{transition-delay:.27s}
+
+@keyframes brilho{0%{background-position:160% 0}100%{background-position:-60% 0}}
+.card-img,.ccard,.m-img,.about-img,.d-thumb{
+  background:linear-gradient(100deg,#F1E9D8 36%,#E8DAB8 50%,#F1E9D8 64%);
+  background-size:220% 100%;animation:brilho 1.5s linear infinite;
+}
+.card-img:has(img.ok),.ccard:has(img.ok),.m-img:has(img.ok),.about-img:has(img.ok),.d-thumb:has(img.ok){animation:none;background:var(--soft)}
+.card-img img,.ccard img,.m-img img,.about-img img,.d-thumb img{opacity:0;transition:opacity .55s ease}
+img.ok{opacity:1}
+
+.banner-img{will-change:transform}
+.banner-in>*{animation:sobe .85s both cubic-bezier(.2,.7,.3,1)}
+.banner-in>*:nth-child(2){animation-delay:.08s}
+.banner-in>*:nth-child(3){animation-delay:.16s}
+.banner-in>*:nth-child(4){animation-delay:.24s}
+@keyframes sobe{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+
+@keyframes pop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.card,.ccard,.passo{animation:pop .5s both cubic-bezier(.2,.7,.3,1);animation-delay:calc(var(--i,0) * 45ms)}
+.ccard::before{content:'';position:absolute;inset:0;z-index:1;opacity:0;transition:opacity .4s;background:linear-gradient(0deg,rgba(201,162,75,.5),rgba(201,162,75,0) 60%)}
+.ccard:hover::before{opacity:1}
+
+header .bar{transition:height .3s cubic-bezier(.2,.7,.3,1)}
+header .logo img{transition:width .3s,height .3s}
+header.scrolled .bar{height:62px}
+header.scrolled .logo img{width:44px;height:44px}
+
+.wa-float::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);animation:anel 2.8s cubic-bezier(.2,.7,.3,1) infinite}
+@keyframes anel{0%{transform:scale(1);opacity:.55}70%,100%{transform:scale(1.65);opacity:0}}
+
+@keyframes bump{0%{transform:none}35%{transform:scale(1.09) translateY(-3px)}100%{transform:none}}
+.fab.bump{animation:bump .42s cubic-bezier(.2,.7,.3,1)}
+.fab-n{transition:transform .25s cubic-bezier(.2,.8,.3,1)}
+.fab.bump .fab-n{transform:scale(1.3)}
+.add{position:relative;overflow:hidden}
+.add.done{animation:bump .4s cubic-bezier(.2,.7,.3,1)}
+
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);z-index:600;
+  background:var(--bordo-xdk);color:#fff;font-size:.88rem;font-weight:500;
+  padding:12px 20px;border-radius:999px;box-shadow:0 14px 34px -12px rgba(0,0,0,.55);
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s cubic-bezier(.2,.7,.3,1);
+  display:flex;align-items:center;gap:9px;max-width:88vw;
+}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.toast svg{width:16px;height:16px;color:var(--dourado);flex:none}
+
+.sec-head h2{position:relative;display:inline-block}
+.sec-head h2::after{content:'';position:absolute;left:0;bottom:-10px;height:3px;width:0;border-radius:2px;background:var(--dourado);transition:width .9s cubic-bezier(.2,.7,.3,1) .25s}
+.sec-head.in h2::after{width:54px}
+
+.btn-wa,.btn-bordo{position:relative;overflow:hidden}
+.btn-wa::after,.btn-bordo::after{
+  content:'';position:absolute;top:0;left:-130%;width:60%;height:100%;
+  background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.3),rgba(255,255,255,0));
+  transform:skewX(-18deg);transition:left .65s cubic-bezier(.2,.7,.3,1);
+}
+.btn-wa:hover::after,.btn-bordo:hover::after{left:135%}
+
+.btn:active,.add:active,.ccard:active,.card:active,.fab:active,.wa-float:active,.passo:active{transform:scale(.97)}
+.ccard,.fab,.wa-float{transition:transform .15s cubic-bezier(.2,.7,.3,1)}
+
+#progresso{position:fixed;top:0;left:0;height:3px;width:0%;z-index:999;background:linear-gradient(90deg,var(--bordo),var(--dourado));transition:width .1s linear}
+
+@media (prefers-reduced-motion: no-preference){
+  @keyframes boia{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .wa-float{animation:boia 3.2s ease-in-out infinite}
+  .wa-float:hover{animation-play-state:paused}
+  @keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+  .phone{animation:flutua 5s ease-in-out infinite}
+  .laptop{animation:flutua 5s ease-in-out infinite 1s}
+}
 </style>
 </head>
 <body>
 
-<header>
-  <div class="nav">
-    <div class="brand"><img src="images/logo.jpg" alt="Empório da Fé"> Empório da Fé</div>
-    <nav class="nav-links">
-      <a href="#sobre">Sobre</a>
-      <a href="#categorias">Categorias</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#consultas">Consultas</a>
-      <a href="#local">Como chegar</a>
-    </nav>
-    <a class="nav-cta" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener">💬 WhatsApp</a>
-  </div>
-</header>
+<div id="progresso"></div>
 
-<section class="hero">
-  <img class="hero-logo" src="images/logo.jpg" alt="Empório da Fé - Casa de Umbanda e Candomblé">
-  <h1>Empório da Fé</h1>
-  <p class="subtitulo">Casa de Umbanda e Candomblé</p>
-  <p>A maior loja de artigos religiosos afro-brasileiros do Baixo São Francisco. Sua caminhada com axé começa aqui — imagens, guias, ervas, velas e muito mais, em Penedo/AL.</p>
-  <div class="hero-ctas">
-    <a class="btn btn-whats" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20pedido." target="_blank" rel="noopener">💬 Fazer pedido pelo WhatsApp</a>
-    <a class="btn btn-outline" href="#categorias">Ver categorias</a>
-  </div>
-</section>
-
-<div class="faixa">
-  <div class="faixa-track">
-    <span>✨ Envio para Penedo/AL e região</span>
-    <span>🕊️ Artigos afro-brasileiros</span>
-    <span>📍 Centro Histórico de Penedo</span>
-    <span>🔮 Consultas de tarô e baralho cigano</span>
-    <span>✨ Envio para Penedo/AL e região</span>
-    <span>🕊️ Artigos afro-brasileiros</span>
-    <span>📍 Centro Histórico de Penedo</span>
-    <span>🔮 Consultas de tarô e baralho cigano</span>
+<div class="topbar">
+  <div class="wrap">
+    <ul>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Rua Nilo Peçanha, 54 · Centro Histórico · Penedo/AL</li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span id="status">Horário a confirmar</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 8 7 15 15 15l2-3-4-2-2 2a13 13 0 0 1-6-6l2-2-2-4-3 2Z"/></svg> (82) 9 9645-1238</li>
+    </ul>
+    <ul>
+      <li><a href="https://www.instagram.com/emporiodafe/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-right:5px"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>@emporiodafe</a></li>
+    </ul>
   </div>
 </div>
 
-<section class="section sobre" id="sobre">
-  <div class="container sobre-grid">
-    <div class="sobre-img"><img src="images/orixas-1.jpg" alt="Imagens de Orixás no Empório da Fé"></div>
-    <div class="sobre-texto">
-      <h2>Mais que uma loja, um espaço de fé e tradição</h2>
-      <p>No coração do Centro Histórico de Penedo, o <b>Empório da Fé</b> reúne o que há de melhor em artigos de Umbanda e Candomblé: imagens de Orixás, guias, ervas, velas, bebidas rituais, adagas, saias, capas e muito mais.</p>
-      <p>Qualidade, tradição e respeito pela cultura afro-brasileira em cada atendimento — para quem já caminha na fé e para quem está começando agora.</p>
-      <div class="infos-rapidas">
-        <div class="info-item"><div class="info-icone">📍</div><div><b>Av. Nilo Peçanha, 54</b> — Centro Histórico, Penedo/AL</div></div>
-        <div class="info-item"><div class="info-icone">🕑</div><div><b>Segunda a sexta:</b> 8h às 16h<br><b>Sábado:</b> 7h às 13h</div></div>
-        <div class="info-item"><div class="info-icone">💬</div><div><b>(82) 99645-1238</b> — pedidos e dúvidas pelo WhatsApp</div></div>
+<header id="top">
+  <div class="wrap bar">
+    <a href="#top" class="logo">
+      <img src="img/logo.png" alt="Empório da Fé">
+      <span><b>Empório da Fé</b><span>Penedo · Alagoas</span></span>
+    </a>
+    <nav class="desk">
+      <a href="#sobre">A loja</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#consultas">Consultas</a>
+      <a href="#local">Onde estamos</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:12px">
+      <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de falar com vocês." target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <button class="burger" id="burger" aria-label="Menu"><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobnav" id="mobnav">
+  <a href="#sobre">A loja</a>
+  <a href="#catalogo">Catálogo</a>
+  <a href="#consultas">Consultas</a>
+  <a href="#local">Onde estamos</a>
+  <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de falar com vocês." target="_blank" rel="noopener" class="btn btn-wa">Chamar no WhatsApp</a>
+</div>
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="banner-img"><img src="img/banner.jpg" alt="Fachada do Empório da Fé, em Penedo, Alagoas"></div>
+  <div class="wrap">
+    <div class="banner-in">
+      <div class="label">Casa de Umbanda e Candomblé em Penedo, Alagoas</div>
+      <h1>Sua caminhada com axé começa aqui.</h1>
+      <p>Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. A maior loja de artigos religiosos do Baixo São Francisco.</p>
+      <div class="banner-cta">
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de saber mais sobre os produtos." target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+          Chamar no WhatsApp
+        </a>
+        <a href="#catalogo" class="btn btn-white-out">Ver o catálogo</a>
+      </div>
+    </div>
+  </div>
+  <div class="bstrip">
+    <div class="wrap">
+      <div class="bs rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22c5-3 8-7 8-12a8 8 0 1 0-16 0c0 5 3 9 8 12Z"/><path d="M12 22V8"/></svg>
+        <div><b>Atendimento acolhedor</b><span>respeito à diversidade religiosa</span></div>
+      </div>
+      <div class="bs rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 11h18"/></svg>
+        <div><b>Tradição afro-brasileira</b><span>cultura, ancestralidade e fé</span></div>
+      </div>
+      <div class="bs rv">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+        <div><b>Encomenda sob consulta</b><span>combine pelo WhatsApp</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section categorias" id="categorias">
-  <div class="container">
-    <h2 class="section-title">Nossas categorias</h2>
-    <div class="ornamento"></div>
-    <p class="section-sub">Tudo o que você precisa para sua jornada espiritual, organizado para facilitar sua busca.</p>
-    <div class="cat-grid">
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20Orix%C3%A1s%20(imagens%20e%20est%C3%A1tuas)." target="_blank" rel="noopener">
-        <div class="cat-emoji">🗿</div><h3>Orixás</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20guias%20e%20colares." target="_blank" rel="noopener">
-        <div class="cat-emoji">📿</div><h3>Guias e Colares</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20velas%20e%20ervas." target="_blank" rel="noopener">
-        <div class="cat-emoji">🕯️</div><h3>Velas e Ervas</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20bebidas%20rituais." target="_blank" rel="noopener">
-        <div class="cat-emoji">🍷</div><h3>Bebidas Rituais</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20adagas%20e%20punhais." target="_blank" rel="noopener">
-        <div class="cat-emoji">🗡️</div><h3>Adagas e Punhais</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20saias." target="_blank" rel="noopener">
-        <div class="cat-emoji">👗</div><h3>Saias</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20ver%20as%20op%C3%A7%C3%B5es%20de%20capas." target="_blank" rel="noopener">
-        <div class="cat-emoji">🧥</div><h3>Capas</h3>
-      </a>
-      <a class="cat-card" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20as%20consultas." target="_blank" rel="noopener">
-        <div class="cat-emoji">🔮</div><h3>Consultas</h3>
+<!-- COMO FUNCIONA -->
+<section class="sec como" id="como-funciona">
+  <div class="wrap">
+    <div class="sec-head rv" style="margin:0 auto 38px;text-align:center;max-width:640px">
+      <div class="label">Como funciona</div>
+      <h2>Quer montar seu orçamento? É simples assim.</h2>
+      <p>O catálogo abaixo funciona como uma sacola. Você escolhe os itens, e no final enviamos tudo de uma vez só para a loja, pelo WhatsApp.</p>
+    </div>
+    <div class="como-grid">
+      <div class="passo rv" style="--i:0">
+        <div class="passo-n">1</div>
+        <h3>Escolha uma categoria</h3>
+        <p>Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas ou indumentária. Toque na categoria que te interessa.</p>
+        <svg class="passo-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="passo rv d1" style="--i:1">
+        <div class="passo-n">2</div>
+        <h3>Monte sua lista</h3>
+        <p>Em cada item que te interessar, toque em <b>+ Orçamento</b>. Você pode ajustar quantidade e ver tudo numa lista a qualquer momento.</p>
+        <svg class="passo-seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </div>
+      <div class="passo rv d2" style="--i:2">
+        <div class="passo-n">3</div>
+        <h3>Envie pelo WhatsApp</h3>
+        <p>Com um toque, sua lista inteira vira uma mensagem pronta. É só enviar, e a loja responde com valores e disponibilidade.</p>
+      </div>
+    </div>
+    <div class="como-cta rv">
+      <a href="#catalogo" class="btn btn-bordo">Começar agora no catálogo</a>
+    </div>
+  </div>
+</section>
+
+<div class="nums">
+  <div class="wrap">
+    <div class="rv"><b data-count="2" data-pre="+" data-suf=" mil">+2 mil</b><span>seguidores no Instagram</span></div>
+    <div class="rv"><b data-count="7">7</b><span>categorias no catálogo</span></div>
+    <div class="rv"><b>Penedo</b><span>Centro Histórico</span></div>
+    <div class="rv"><b>Baixo São Francisco</b><span>região atendida</span></div>
+  </div>
+</div>
+
+<!-- SOBRE -->
+<section class="sec" id="sobre">
+  <div class="wrap about">
+    <div class="about-img rv"><img src="img/raw-orixas1.jpg" alt="Imagens de Orixás no Empório da Fé"></div>
+    <div class="rv d1">
+      <div class="label">A loja</div>
+      <h2 style="margin:10px 0 14px">Um ponto de encontro entre fé, cultura e ancestralidade.</h2>
+      <p style="color:var(--gray)">O Empório da Fé fica no Centro Histórico de Penedo e reúne artigos religiosos de Umbanda e Candomblé. Mais do que uma loja, é um espaço de cultura afro-brasileira, onde cada peça carrega uma história. Se você não souber qual item procura, pergunte. A loja responde com atenção e respeito.</p>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Imagens, guias e produtos sagrados</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Ervas, banhos e defumações</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Velas e artigos rituais</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg> Atendimento acolhedor e respeitoso</li>
+      </ul>
+      <div class="about-cta">
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e fiquei com uma dúvida." target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+          Tirar uma dúvida
+        </a>
+        <a href="#local" class="btn btn-out">Como chegar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGO -->
+<section class="sec sec-soft" id="catalogo">
+  <div class="wrap">
+    <div class="cat-bar">
+      <div class="sec-head rv" style="margin-bottom:0">
+        <div class="label">Catálogo</div>
+        <h2>O que tem na loja.</h2>
+        <p>Escolha uma categoria para ver os produtos. Toque em <b>+ Orçamento</b> no que te interessar, e a lista vira uma mensagem pronta no nosso WhatsApp.</p>
+      </div>
+    </div>
+
+    <div class="cat-grid" id="catGrid"></div>
+
+    <div id="prodView" hidden>
+      <div class="cat-nav">
+        <button class="voltar" id="voltar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"/></svg>
+          Todas as categorias
+        </button>
+        <h3 id="catTitle"></h3>
+        <span class="cnt" id="catCount"></span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+    <div class="cat-foot rv">
+      <p><b>Não achou o que procurava?</b> A loja trabalha com encomenda de itens religiosos e esotéricos. Chame no WhatsApp que a gente verifica.</p>
+      <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé. Procuro um item que não achei no catálogo. Vocês teriam ou conseguem por encomenda?" target="_blank" rel="noopener" class="btn btn-wa">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+        Perguntar disponibilidade
       </a>
     </div>
   </div>
 </section>
 
-<section class="section produtos" id="produtos">
-  <div class="container">
-    <h2 class="section-title">Alguns dos nossos produtos</h2>
-    <div class="ornamento"></div>
-    <p class="section-sub">Uma amostra do nosso catálogo — fale com a gente pelo WhatsApp para ver fotos e preços atualizados de cada peça.</p>
-    <div class="prod-grid">
+<!-- FAIXA CTA -->
+<section class="faixa">
+  <div class="faixa-img"></div>
+  <div class="wrap">
+    <div>
+      <h2>Está começando um trabalho ou preparando uma oferenda?</h2>
+      <p>Conte pra gente o que você precisa pelo WhatsApp. A loja indica os itens certos e confirma disponibilidade na hora.</p>
+    </div>
+    <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé. Preciso de ajuda para montar um pedido para um trabalho ou oferenda." target="_blank" rel="noopener" class="btn btn-wa" style="padding:15px 26px">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+      Falar com a loja
+    </a>
+  </div>
+</section>
 
-      <div class="prod-card">
-        <div class="prod-img"><img src="images/orixas-1.jpg" alt="Imagens de Orixás"></div>
-        <div class="prod-info">
-          <span class="prod-tag">Orixás</span>
-          <h4>Imagens de Orixás</h4>
-          <p>Diversos tamanhos e modelos, para assentamento e devoção.</p>
-          <div class="prod-preco">Consulte o valor<small>preço a confirmar com a loja</small></div>
-          <a class="btn-produto" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20imagens%20de%20Orix%C3%A1s.%20Pode%20me%20passar%20op%C3%A7%C3%B5es%20e%20valores%3F" target="_blank" rel="noopener">💬 Pedir no WhatsApp</a>
+<!-- CONSULTAS -->
+<section class="sec" id="consultas">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="label">Consultas</div>
+      <h2>Atendimento espiritual, online ou presencial.</h2>
+      <p>Valores sob consulta. Agende pelo WhatsApp e confirme horário e formato com a loja.</p>
+    </div>
+    <div class="cons-grid">
+      <div class="cons rv">
+        <h3>Mesa de Tarô e Baralho Cigano</h3>
+        <p>Orientação espiritual com tarô e baralho cigano, online ou presencial.</p>
+        <span class="price">Valor sob consulta</span>
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de agendar uma mesa de tarô e baralho cigano." target="_blank" rel="noopener" class="btn btn-bordo">Agendar pelo WhatsApp</a>
+      </div>
+      <div class="cons rv d1">
+        <h3>Orientação espiritual</h3>
+        <p>Conversa de orientação com quem cuida da casa, para dúvidas sobre caminho espiritual e trabalhos.</p>
+        <span class="price">Valor sob consulta</span>
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de agendar uma orientação espiritual." target="_blank" rel="noopener" class="btn btn-bordo">Agendar pelo WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+<section class="sec sec-soft ig" id="instagram">
+  <div class="wrap ig-grid">
+    <div class="ig-txt rv">
+      <div class="label">Instagram</div>
+      <h2 style="margin:10px 0 14px">Nos siga no Instagram.</h2>
+      <p style="color:var(--gray)">Promoções, chegada de peças novas e os bastidores da casa saem primeiro por lá. @emporiodafe.</p>
+      <a href="https://www.instagram.com/emporiodafe/" target="_blank" rel="noopener" class="btn btn-bordo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        Seguir @emporiodafe
+      </a>
+    </div>
+    <div class="devices rv d1">
+      <div class="laptop">
+        <div class="laptop-screen">
+          <div class="laptop-bar"><span></span><span></span><span></span></div>
+          <div class="laptop-inner">
+            <div class="igui-head">
+              <div class="igui-ava"><img src="img/logo.png" alt=""></div>
+              <div><span class="igui-name">emporiodafe</span><span class="igui-sub" style="display:block">Empório da Fé</span></div>
+            </div>
+            <div class="igui-grid">
+              <div><img src="img/raw-orixas1.jpg" alt=""></div>
+              <div><img src="img/raw-guias.jpg" alt=""></div>
+              <div><img src="img/raw-velas.jpg" alt=""></div>
+              <div><img src="img/raw-adagas.jpg" alt=""></div>
+              <div><img src="img/raw-ervas.jpg" alt=""></div>
+              <div><img src="img/raw-orixas2.jpg" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-notch"></div>
+          <div class="igui-head" style="padding-top:20px">
+            <div class="igui-ava"><img src="img/logo.png" alt=""></div>
+            <div><span class="igui-name">emporiodafe</span></div>
+          </div>
+          <div class="igui-grid">
+            <div><img src="img/raw-bebidas.jpg" alt=""></div>
+            <div><img src="img/raw-tecido.jpg" alt=""></div>
+            <div><img src="img/raw-capacete.jpg" alt=""></div>
+            <div><img src="img/raw-orixas2.jpg" alt=""></div>
+            <div><img src="img/raw-guias.jpg" alt=""></div>
+            <div><img src="img/raw-velas.jpg" alt=""></div>
+          </div>
         </div>
       </div>
-
-      <div class="prod-card">
-        <div class="prod-img"><img src="images/orixas-2.jpg" alt="Imagens de Preto Velho e guias"></div>
-        <div class="prod-info">
-          <span class="prod-tag">Orixás</span>
-          <h4>Imagens de Preto Velho</h4>
-          <p>Peças para terreiro e para casa, com acabamento tradicional.</p>
-          <div class="prod-preco">Consulte o valor<small>preço a confirmar com a loja</small></div>
-          <a class="btn-produto" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Tenho%20interesse%20nas%20imagens%20de%20Preto%20Velho.%20Pode%20me%20passar%20op%C3%A7%C3%B5es%20e%20valores%3F" target="_blank" rel="noopener">💬 Pedir no WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="prod-card">
-        <div class="prod-img"><img src="images/guias-taca.jpg" alt="Guias, colares e taças rituais"></div>
-        <div class="prod-info">
-          <span class="prod-tag">Guias e Colares</span>
-          <h4>Guias e Taças Rituais</h4>
-          <p>Guias contas, taças e materiais usados em giras e rituais.</p>
-          <div class="prod-preco">Consulte o valor<small>preço a confirmar com a loja</small></div>
-          <a class="btn-produto" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Tenho%20interesse%20em%20guias%20e%20ta%C3%A7as%20rituais.%20Pode%20me%20passar%20op%C3%A7%C3%B5es%20e%20valores%3F" target="_blank" rel="noopener">💬 Pedir no WhatsApp</a>
-        </div>
-      </div>
-
-      <div class="prod-card">
-        <div class="prod-img"><img src="images/capacete-palha.jpg" alt="Indumentária de palha ritual"></div>
-        <div class="prod-info">
-          <span class="prod-tag">Indumentária</span>
-          <h4>Indumentária de Palha</h4>
-          <p>Vestimentas rituais em palha, feitas à mão.</p>
-          <div class="prod-preco">Consulte o valor<small>preço a confirmar com a loja</small></div>
-          <a class="btn-produto" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Tenho%20interesse%20na%20indument%C3%A1ria%20de%20palha.%20Pode%20me%20passar%20op%C3%A7%C3%B5es%20e%20valores%3F" target="_blank" rel="noopener">💬 Pedir no WhatsApp</a>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
 
-<section class="section servicos" id="consultas">
-  <div class="container">
-    <h2 class="section-title">Consultas e orientação espiritual</h2>
-    <div class="ornamento"></div>
-    <p class="section-sub">Atendimentos online ou presenciais, em Penedo/AL.</p>
-    <div class="serv-grid">
-      <div class="serv-card">
-        <h3>🔮 Mesa de Ogum — Tarô + Baralho Cigano</h3>
-        <p>Consulta completa combinando tarô e baralho cigano, para orientação sobre os mais diversos temas da sua vida.</p>
-        <div class="serv-preco"><s>R$150</s> por R$55</div>
-        <a class="btn btn-whats" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20consulta%20de%20Mesa%20de%20Ogum%20(tar%C3%B4%20%2B%20baralho%20cigano)." target="_blank" rel="noopener">💬 Agendar horário</a>
-      </div>
-      <div class="serv-card">
-        <h3>🕊️ Orientação espiritual</h3>
-        <p>Encontre apoio e orientação para os desafios do dia a dia, com atendimento acolhedor e respeitoso.</p>
-        <p style="opacity:.8;font-size:.85rem;">Valores e disponibilidade de horário sob consulta.</p>
-        <a class="btn btn-whats" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20orienta%C3%A7%C3%A3o%20espiritual." target="_blank" rel="noopener">💬 Saber mais</a>
-      </div>
+<!-- FAQ -->
+<section class="sec" id="duvidas">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="label">Dúvidas</div>
+      <h2>Perguntas que a gente mais ouve.</h2>
+    </div>
+    <div class="faq">
+      <details class="rv">
+        <summary>Como faço para saber o preço?</summary>
+        <div class="r">Os preços variam conforme o item e a disponibilidade, por isso não ficam fixos no site. Monte sua lista no catálogo e envie pelo botão de orçamento, que a loja responde com valor e disponibilidade de cada peça.</div>
+      </details>
+      <details class="rv">
+        <summary>Vocês entregam fora de Penedo?</summary>
+        <div class="r">A loja atende Penedo e a região do Baixo São Francisco. Combine entrega e frete direto pelo WhatsApp.</div>
+      </details>
+      <details class="rv">
+        <summary>Não achei o item que eu queria. E agora?</summary>
+        <div class="r">O catálogo mostra o que costuma ter na loja, mas também fazem encomenda de itens religiosos e esotéricos. <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé. Procuro um item que não achei no catálogo. Vocês teriam ou conseguem por encomenda?" target="_blank" rel="noopener">Chame no WhatsApp</a> e diga o que procura.</div>
+      </details>
+      <details class="rv">
+        <summary>Posso ir até a loja escolher?</summary>
+        <div class="r">Pode, e vale a pena. A loja fica na Rua Nilo Peçanha, 54, no Centro Histórico de Penedo. Confirme o horário de funcionamento pelo WhatsApp antes de ir.</div>
+      </details>
+      <details class="rv">
+        <summary>Vocês fazem consulta espiritual?</summary>
+        <div class="r">Sim, com mesa de tarô e baralho cigano ou orientação espiritual, online ou presencial. Valores sob consulta. Agende pelo WhatsApp.</div>
+      </details>
     </div>
   </div>
 </section>
 
-<section class="section localizacao" id="local">
-  <div class="container loc-grid">
-    <div class="loc-card">
-      <h3>Como chegar</h3>
-      <div class="loc-item"><span class="ic">📍</span><div><b>Endereço</b>Av. Nilo Peçanha, 54 — Centro Histórico, Penedo/AL</div></div>
-      <div class="loc-item"><span class="ic">🕑</span><div><b>Horário de funcionamento</b>Segunda a sexta: 8h às 16h<br>Sábado: 7h às 13h<br>Domingo: fechado</div></div>
-      <div class="loc-item"><span class="ic">💬</span><div><b>WhatsApp</b>(82) 99645-1238</div></div>
-      <div class="loc-item"><span class="ic">🚚</span><div><b>Entregas</b>Envio para Penedo/AL e região</div></div>
-      <a class="btn btn-whats" style="margin-top:10px;" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Gostaria%20de%20saber%20como%20chegar%20at%C3%A9%20a%20loja." target="_blank" rel="noopener">💬 Falar no WhatsApp</a>
+<!-- LOCAL -->
+<section class="sec sec-soft" id="local">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="label">Onde estamos</div>
+      <h2>Venha conhecer de perto.</h2>
+      <p>A loja fica no Centro Histórico de Penedo. Vale a pena ver as peças de perto, mas se preferir, resolva tudo por mensagem.</p>
     </div>
-    <div class="mapa-wrap">
-      <iframe src="https://www.google.com/maps?q=Av.+Nilo+Pe%C3%A7anha,+54,+Centro+Hist%C3%B3rico,+Penedo+-+AL&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="loc">
+      <div class="loc-map rv">
+        <iframe src="https://www.google.com/maps?q=Rua+Nilo+Pe%C3%A7anha,+54,+Centro+Hist%C3%B3rico,+Penedo+-+AL&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Mapa com a localização do Empório da Fé"></iframe>
+      </div>
+      <div class="loc-info rv">
+        <h3>Empório da Fé</h3>
+        <p class="end">Rua Nilo Peçanha, 54, Centro Histórico<br>Penedo, Alagoas</p>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Horário</b><p>A confirmar com a loja</p></div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h11v9H3zM14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>
+          <div><b>Entrega</b><p>Penedo e região, combinada pelo WhatsApp</p></div>
+        </div>
+        <div class="loc-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 5c0 8 7 15 15 15l2-3-4-2-2 2a13 13 0 0 1-6-6l2-2-2-4-3 2Z"/></svg>
+          <div><b>Telefone</b><p>(82) 9 9645-1238</p></div>
+        </div>
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé. Queria confirmar o horário para visitar a loja na Rua Nilo Peçanha." target="_blank" rel="noopener" class="btn btn-wa">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+          Chamar no WhatsApp
+        </a>
+      </div>
     </div>
   </div>
-</section>
-
-<section class="cta-final">
-  <h2>Sua caminhada com axé começa aqui</h2>
-  <p>Fale agora com o Empório da Fé e tire suas dúvidas, peça seus produtos ou agende sua consulta.</p>
-  <a class="btn btn-whats" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener">💬 Chamar no WhatsApp</a>
 </section>
 
 <footer>
-  <div class="brand">🕊️ Empório da Fé</div>
-  <div>Casa de Umbanda e Candomblé — Penedo/AL</div>
-  <div style="margin-top:10px;">Av. Nilo Peçanha, 54, Centro Histórico · (82) 99645-1238</div>
-  <p class="aviso">Site criado como proposta comercial a partir do perfil público @emporiodafe no Instagram. Imagens, horários, endereço e descrições devem ser conferidos e confirmados pelo responsável da loja antes da divulgação oficial. Preços de produtos não exibidos (sob consulta) até confirmação do lojista.</p>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="#top" class="logo">
+          <img src="img/logo.png" alt="Empório da Fé">
+          <span><b>Empório da Fé</b><span>Penedo · Alagoas</span></span>
+        </a>
+        <p>Artigos religiosos de Umbanda e Candomblé. Imagens, guias, velas, ervas, bebidas rituais, adagas e indumentária.</p>
+      </div>
+      <div class="f-col">
+        <b class="t">Navegue</b>
+        <a href="#sobre">A loja</a>
+        <a href="#catalogo">Catálogo</a>
+        <a href="#consultas">Consultas</a>
+        <a href="#local">Onde estamos</a>
+      </div>
+      <div class="f-col">
+        <b class="t">Categorias</b>
+        <a href="#catalogo" data-cat="Imagens de Orixás">Imagens de Orixás</a>
+        <a href="#catalogo" data-cat="Guias e Fios de Contas">Guias e Fios de Contas</a>
+        <a href="#catalogo" data-cat="Velas e Artigos Rituais">Velas e Artigos Rituais</a>
+        <a href="#catalogo" data-cat="Ervas e Defumações">Ervas e Defumações</a>
+        <a href="#catalogo" data-cat="Bebidas Rituais">Bebidas Rituais</a>
+        <a href="#catalogo" data-cat="Adagas e Punhais">Adagas e Punhais</a>
+        <a href="#catalogo" data-cat="Saias e Indumentária">Saias e Indumentária</a>
+      </div>
+      <div class="f-col">
+        <b class="t">Contato</b>
+        <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de falar com vocês." target="_blank" rel="noopener">WhatsApp (82) 9 9645-1238</a>
+        <a href="https://www.instagram.com/emporiodafe/" target="_blank" rel="noopener">@emporiodafe</a>
+        <p>Rua Nilo Peçanha, 54, Centro Histórico<br>Penedo, AL</p>
+      </div>
+    </div>
+    <div class="f-bot">
+      <span>© 2026 Empório da Fé</span>
+      <span>Site criado como proposta comercial a partir do perfil público @emporiodafe no Instagram. Imagens, horários e descrições devem ser conferidos e confirmados pela loja antes da divulgação oficial. Preços sob consulta até confirmação do lojista.</span>
+    </div>
+  </div>
 </footer>
 
-<a class="whats-float" href="https://wa.me/5582996451238?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20falar%20com%20voc%C3%AAs." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+<a class="wa-float" href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de falar com vocês." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+</a>
 
+<button class="fab" id="fab">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 6h15l-1.5 9h-12z"/><path d="M6 6 5 3H2"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>
+  Orçamento <span class="fab-n" id="fabCount">0</span>
+</button>
+
+<button id="topo" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Detalhes do produto">
+  <div class="m-card">
+    <button class="m-fechar" data-fechar aria-label="Fechar">×</button>
+    <div class="m-in" id="modalIn"></div>
+  </div>
+</div>
+
+<div class="dbg" id="dbg"></div>
+<aside class="drawer" id="drawer" aria-label="Lista de orçamento">
+  <div class="d-head">
+    <div><h3>Meu orçamento</h3><p>Sua lista vira uma mensagem pronta no WhatsApp.</p></div>
+    <button class="d-close" id="dClose" aria-label="Fechar">×</button>
+  </div>
+  <div class="d-body" id="dBody"></div>
+  <div class="d-foot">
+    <label for="nome">Seu nome</label>
+    <input id="nome" type="text" placeholder="Como podemos te chamar?">
+    <label for="obs">Observação (opcional)</label>
+    <textarea id="obs" rows="2" placeholder="Quantidade, cor, prazo..."></textarea>
+    <button class="btn btn-wa" id="send">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Z"/><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1-.3-.1-.5-.2-.7.1-.2.3-.7 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.4-.3-.5.3-.5.8-1.5.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/></svg>
+      Enviar pelo WhatsApp
+    </button>
+  </div>
+</aside>
+
+<script>
+const WA = 'https://wa.me/558296451238';
+const waLink = msg => WA + '?text=' + encodeURIComponent(msg);
+document.querySelectorAll('[data-msg]').forEach(a => { a.href = waLink(a.dataset.msg); });
+
+const PRODUTOS = [
+  {n:"Imagem de Oxalá", c:"Imagens de Orixás", d:"Imagem em resina para assentamento ou altar doméstico.", i:"img/raw-orixas1.jpg"},
+  {n:"Imagem de Iemanjá", c:"Imagens de Orixás", d:"Imagem da rainha do mar, para assentamento e oferendas.", i:"img/raw-orixas1.jpg"},
+  {n:"Imagem de Preto Velho", c:"Imagens de Orixás", d:"Imagem de Preto Velho, entidade de sabedoria e cura.", i:"img/raw-orixas2.jpg"},
+  {n:"Imagem de Ogum", c:"Imagens de Orixás", d:"Imagem de Ogum, orixá da lei e da guerra.", i:"img/raw-orixas2.jpg"},
+  {n:"Guia de Oxum", c:"Guias e Fios de Contas", d:"Guia de contas na cor de Oxum, para uso no dia a dia ou em giras.", i:"img/raw-guias.jpg"},
+  {n:"Guia de Iemanjá", c:"Guias e Fios de Contas", d:"Guia de contas na cor de Iemanjá.", i:"img/raw-guias.jpg"},
+  {n:"Guia de Ogum", c:"Guias e Fios de Contas", d:"Guia de contas na cor de Ogum.", i:"img/raw-guias.jpg"},
+  {n:"Fio de contas sete linhas", c:"Guias e Fios de Contas", d:"Fio de contas com as sete linhas da Umbanda.", i:"img/raw-guias.jpg"},
+  {n:"Vela de 7 dias", c:"Velas e Artigos Rituais", d:"Vela de queima longa, para pedidos e trabalhos espirituais.", i:"img/raw-velas.jpg"},
+  {n:"Vela colorida ritual", c:"Velas e Artigos Rituais", d:"Vela colorida conforme a finalidade do trabalho.", i:"img/raw-velas.jpg"},
+  {n:"Castiçal de ferro", c:"Velas e Artigos Rituais", d:"Castiçal de ferro para velas de altar.", i:"img/raw-velas.jpg"},
+  {n:"Kit de velas para oferenda", c:"Velas e Artigos Rituais", d:"Kit com velas variadas para oferendas.", i:"img/raw-velas.jpg"},
+  {n:"Defumador de ervas", c:"Ervas e Defumações", d:"Mistura de ervas para defumação e limpeza do ambiente.", i:"img/raw-ervas.jpg"},
+  {n:"Banho de ervas", c:"Ervas e Defumações", d:"Ervas selecionadas para banho de descarrego.", i:"img/raw-ervas.jpg"},
+  {n:"Arruda em maço", c:"Ervas e Defumações", d:"Arruda fresca, usada em banhos e defumações.", i:"img/raw-ervas.jpg"},
+  {n:"Kit de ervas para limpeza espiritual", c:"Ervas e Defumações", d:"Kit com ervas variadas para limpeza espiritual.", i:"img/raw-ervas.jpg"},
+  {n:"Cachaça para oferenda", c:"Bebidas Rituais", d:"Cachaça para oferendas e trabalhos de Exu.", i:"img/raw-bebidas.jpg"},
+  {n:"Vinho tinto ritual", c:"Bebidas Rituais", d:"Vinho tinto para oferendas e rituais.", i:"img/raw-bebidas.jpg"},
+  {n:"Champanhe para Iemanjá", c:"Bebidas Rituais", d:"Champanhe usado em oferendas para Iemanjá.", i:"img/raw-bebidas.jpg"},
+  {n:"Marafo", c:"Bebidas Rituais", d:"Marafo tradicional para rituais de Umbanda.", i:"img/raw-bebidas.jpg"},
+  {n:"Adaga ritual pequena", c:"Adagas e Punhais", d:"Adaga ritual em metal, com pedra na empunhadura.", i:"img/raw-adagas.jpg"},
+  {n:"Punhal cerimonial", c:"Adagas e Punhais", d:"Punhal cerimonial para uso em giras e trabalhos.", i:"img/raw-adagas.jpg"},
+  {n:"Kit de adagas para Exu", c:"Adagas e Punhais", d:"Kit de adagas usado em assentamentos de Exu.", i:"img/raw-adagas.jpg"},
+  {n:"Adaga com pedra", c:"Adagas e Punhais", d:"Adaga decorada com pedra colorida.", i:"img/raw-adagas.jpg"},
+  {n:"Saia de axé rodada", c:"Saias e Indumentária", d:"Saia rodada, usada em apresentações e giras.", i:"img/raw-tecido.jpg"},
+  {n:"Capa cerimonial", c:"Saias e Indumentária", d:"Capa de tecido para uso cerimonial.", i:"img/raw-tecido.jpg"},
+  {n:"Capacete de palha", c:"Saias e Indumentária", d:"Indumentária de palha usada em rituais e apresentações.", i:"img/raw-capacete.jpg"},
+  {n:"Colar de palha da costa", c:"Saias e Indumentária", d:"Colar de palha da costa, usado em giras e festas.", i:"img/raw-capacete.jpg"}
+];
+
+const CATS = [
+  {n:"Imagens de Orixás", i:"img/raw-orixas1.jpg", d:"Imagens e produtos sagrados"},
+  {n:"Guias e Fios de Contas", i:"img/raw-guias.jpg", d:"Guias de contas nas cores de cada orixá"},
+  {n:"Velas e Artigos Rituais", i:"img/raw-velas.jpg", d:"Velas, castiçais e kits para oferenda"},
+  {n:"Ervas e Defumações", i:"img/raw-ervas.jpg", d:"Banhos, defumadores e ervas para limpeza"},
+  {n:"Bebidas Rituais", i:"img/raw-bebidas.jpg", d:"Para oferendas e trabalhos"},
+  {n:"Adagas e Punhais", i:"img/raw-adagas.jpg", d:"Para assentamentos e giras"},
+  {n:"Saias e Indumentária", i:"img/raw-tecido.jpg", d:"Saias, capas e palha da costa"}
+];
+
+let orcamento = [], filtro = CATS[0].n;
+const grid = document.getElementById('grid');
+const catGrid = document.getElementById('catGrid'), prodView = document.getElementById('prodView');
+
+const CHAVE = 'emporiodafe:orcamento';
+function salvar(){ try{ localStorage.setItem(CHAVE, JSON.stringify(orcamento)); }catch(e){} }
+function recuperar(){
+  try{
+    const g = JSON.parse(localStorage.getItem(CHAVE) || '[]');
+    if(Array.isArray(g)) orcamento = g.filter(x => x && x.n && PRODUTOS.some(p => p.n === x.n))
+                                      .map(x => ({n: x.n, q: Math.max(1, Math.min(99, +x.q || 1))}));
+  }catch(e){}
+}
+const naLista = n => orcamento.some(x => x.n === n);
+const qtdDe   = n => (orcamento.find(x => x.n === n) || {}).q || 0;
+
+function addItem(n){
+  const it = orcamento.find(x => x.n === n);
+  if(it){ orcamento = orcamento.filter(x => x.n !== n); aviso(n + ' saiu da lista'); }
+  else { orcamento.push({n, q: 1}); aviso(n + ' entrou no orçamento'); pulaFab(); }
+  salvar(); atualizar(); render(); pintarModal();
+}
+function mudarQtd(n, d){
+  const it = orcamento.find(x => x.n === n);
+  if(!it) return;
+  it.q += d;
+  if(it.q < 1) orcamento = orcamento.filter(x => x.n !== n);
+  if(it.q > 99) it.q = 99;
+  salvar(); atualizar(); render(); pintarModal();
+}
+
+function renderCats(){
+  catGrid.innerHTML = CATS.map((c, i) => `
+    <button class="ccard" data-cat="${c.n}" style="--i:${i}">
+      <img src="${c.i}" alt="${c.n}" loading="lazy" decoding="async" onload="this.classList.add('ok')">
+      <span class="ccard-in">
+        <b>${c.n}</b>
+        <i>${PRODUTOS.filter(p => p.c === c.n).length} itens
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </i>
+      </span>
+    </button>`).join('');
+  marcarImgs();
+}
+
+function abrirCat(nome, scroll = true){
+  filtro = nome;
+  catGrid.hidden = true; prodView.hidden = false;
+  document.getElementById('catTitle').textContent = nome;
+  const q = PRODUTOS.filter(p => p.c === nome).length;
+  document.getElementById('catCount').textContent = `${q} ${q === 1 ? 'item' : 'itens'}`;
+  render();
+  location.hash = 'c=' + encodeURIComponent(nome);
+  if(scroll) document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'});
+}
+
+function verCategorias(scroll = true){
+  catGrid.hidden = false; prodView.hidden = true;
+  if(location.hash) history.replaceState(null, '', location.pathname);
+  if(scroll) document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'});
+}
+document.getElementById('voltar').onclick = () => verCategorias();
+
+function render(){
+  const itens = PRODUTOS.filter(p => p.c === filtro);
+  grid.innerHTML = itens.map((p, i) => `
+    <article class="card" data-prod="${p.n}" style="--i:${i}">
+      <div class="card-img">
+        <img src="${p.i}" alt="${p.n}" loading="lazy" decoding="async" onload="this.classList.add('ok')">
+        <span class="card-tag">${p.c}</span>
+      </div>
+      <div class="card-in">
+        <h3>${p.n}</h3>
+        <p>${p.d}</p>
+        <div class="card-foot">
+          <span class="price">Sob consulta</span>
+          <button class="add${naLista(p.n) ? ' done' : ''}" data-add="${p.n}">${naLista(p.n) ? '&#10003; ' + qtdDe(p.n) + ' na lista' : '+ Orçamento'}</button>
+        </div>
+      </div>
+    </article>`).join('');
+  marcarImgs();
+}
+
+const modal = document.getElementById('modal'), modalIn = document.getElementById('modalIn');
+let produtoAberto = null;
+
+function abrirProduto(nome){
+  const p = PRODUTOS.find(x => x.n === nome);
+  if(!p) return;
+  produtoAberto = p;
+  pintarModal();
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function fecharProduto(){
+  produtoAberto = null;
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+function pintarModal(){
+  const p = produtoAberto;
+  if(!p) return;
+  const q = qtdDe(p.n);
+  modalIn.innerHTML = `
+    <div class="m-img"><img src="${p.i}" alt="${p.n}" loading="lazy"></div>
+    <div class="m-txt">
+      <span class="m-cat">${p.c}</span>
+      <h3>${p.n}</h3>
+      <p class="m-preco">Preço sob consulta</p>
+      <p>${p.d || ''}</p>
+      <div class="m-acao">
+        ${q ? `<div class="qtd">
+                 <button data-q="-1" data-qn="${p.n}" aria-label="Menos um">-</button>
+                 <b>${q}</b>
+                 <button data-q="1" data-qn="${p.n}" aria-label="Mais um">+</button>
+               </div>
+               <button class="btn btn-out" data-add="${p.n}">Tirar da lista</button>`
+             : `<button class="btn btn-bordo" data-add="${p.n}">+ Adicionar ao orçamento</button>`}
+      </div>
+      <a class="m-wa" href="${waLink('Olá! Vim pelo site do Empório da Fé. Tenho interesse neste item: ' + p.n + '. Ainda está disponível?')}" target="_blank" rel="noopener">Perguntar sobre este item no WhatsApp</a>
+    </div>`;
+}
+if(modal){
+  modal.addEventListener('click', e => { if(e.target === modal || e.target.closest('[data-fechar]')) fecharProduto(); });
+  addEventListener('keydown', e => { if(e.key === 'Escape') { fecharProduto(); abrir(false); } });
+}
+
+const fab = document.getElementById('fab'), fabCount = document.getElementById('fabCount');
+const drawer = document.getElementById('drawer'), dbg = document.getElementById('dbg'), dBody = document.getElementById('dBody');
+
+document.addEventListener('click', e => {
+  const cat = e.target.closest('[data-cat]');
+  if(cat){ e.preventDefault(); abrirCat(cat.dataset.cat); return; }
+
+  const q = e.target.closest('[data-q]');
+  if(q){ e.preventDefault(); mudarQtd(q.dataset.qn, +q.dataset.q); return; }
+
+  const add = e.target.closest('[data-add]');
+  if(add){ e.preventDefault(); e.stopPropagation(); addItem(add.dataset.add); return; }
+
+  const rm = e.target.closest('[data-rm]');
+  if(rm){ orcamento = orcamento.filter(x => x.n !== rm.dataset.rm); salvar(); atualizar(); render(); return; }
+
+  const prod = e.target.closest('[data-prod]');
+  if(prod){ abrirProduto(prod.dataset.prod); return; }
+});
+
+function atualizar(){
+  const total = orcamento.reduce((s, x) => s + x.q, 0);
+  fabCount.textContent = total;
+  fab.classList.toggle('cheio', total > 0);
+  if(!orcamento.length){
+    dBody.innerHTML = `<div class="d-empty">Sua lista está vazia.<br>Toque em <b>+ Orçamento</b> nos itens que te interessarem.</div>`;
+    return;
+  }
+  dBody.innerHTML = orcamento.map(it => {
+    const p = PRODUTOS.find(x => x.n === it.n);
+    if(!p) return '';
+    return `<div class="d-item">
+      <div class="d-thumb"><img src="${p.i}" alt="" loading="lazy" onload="this.classList.add('ok')"></div>
+      <div class="d-nome"><b>${p.n}</b><span>${p.c}</span></div>
+      <div class="qtd sm">
+        <button data-q="-1" data-qn="${p.n}" aria-label="Menos um">-</button>
+        <b>${it.q}</b>
+        <button data-q="1" data-qn="${p.n}" aria-label="Mais um">+</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function abrir(v){ drawer.classList.toggle('open', v); dbg.classList.toggle('open', v); }
+fab.onclick = () => abrir(true);
+document.getElementById('dClose').onclick = () => abrir(false);
+dbg.onclick = () => abrir(false);
+
+document.getElementById('send').onclick = () => {
+  if(!orcamento.length){ alert('Adicione pelo menos um item à lista.'); return; }
+  const nome = document.getElementById('nome').value.trim();
+  const obs  = document.getElementById('obs').value.trim();
+  const n = orcamento.length;
+
+  let msg = 'Olá! Vim pelo site do Empório da Fé.\n';
+  if(nome) msg += `Meu nome é ${nome}.\n`;
+  msg += `\nGostaria de um orçamento ${n === 1 ? 'deste item' : 'destes ' + n + ' itens'}:\n\n`;
+  msg += orcamento.map((it, i) => {
+    const p = PRODUTOS.find(y => y.n === it.n) || {};
+    return `${i + 1}. ${it.q}x ${it.n}`;
+  }).join('\n');
+  msg += '\n\nPodem confirmar valor e disponibilidade?';
+  if(obs) msg += `\n\nObservação: ${obs}`;
+
+  window.open(waLink(msg), '_blank');
+};
+
+const mobnav = document.getElementById('mobnav');
+document.getElementById('burger').onclick = () => mobnav.classList.toggle('open');
+mobnav.querySelectorAll('a').forEach(a => a.onclick = () => mobnav.classList.remove('open'));
+
+const btTopo = document.getElementById('topo');
+if(btTopo){
+  btTopo.onclick = () => scrollTo({top: 0, behavior: 'smooth'});
+  addEventListener('scroll', () => btTopo.classList.toggle('on', scrollY > 900));
+}
+
+function doHash(){
+  const h = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+  if(h.startsWith('c=')){
+    const nome = h.slice(2);
+    if(CATS.some(c => c.n === nome)) abrirCat(nome, false);
+  }
+}
+addEventListener('hashchange', doHash);
+
+const calmo = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+let tAviso;
+function aviso(txt){
+  let el = document.getElementById('toast');
+  if(!el){
+    el = document.createElement('div');
+    el.id = 'toast'; el.className = 'toast'; el.setAttribute('role', 'status');
+    document.body.appendChild(el);
+  }
+  el.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><path d="M20 6 9 17l-5-5"/></svg><span></span>`;
+  el.querySelector('span').textContent = txt;
+  el.classList.add('on');
+  clearTimeout(tAviso);
+  tAviso = setTimeout(() => el.classList.remove('on'), 2200);
+}
+function pulaFab(){
+  fab.classList.remove('bump');
+  void fab.offsetWidth;
+  fab.classList.add('bump');
+  setTimeout(() => fab.classList.remove('bump'), 500);
+}
+
+function marcarImgs(){
+  document.querySelectorAll('img').forEach(i => {
+    if(i.classList.contains('ok')) return;
+    if(i.complete && i.naturalWidth) i.classList.add('ok');
+    else i.addEventListener('load', () => i.classList.add('ok'), {once: true});
+  });
+}
+marcarImgs();
+addEventListener('load', marcarImgs);
+
+const olho = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); olho.unobserve(e.target); } });
+}, {threshold: .12, rootMargin: '0px 0px -40px'});
+function observar(){
+  document.querySelectorAll('.rv:not(.in)').forEach(el => olho.observe(el));
+  ['.bstrip .wrap', '.cons-grid'].forEach(sel => {
+    const pai = document.querySelector(sel);
+    if(!pai) return;
+    [...pai.children].forEach((f, i) => { if(i && i < 4 && f.classList.contains('rv')) f.classList.add('d' + i); });
+  });
+  document.querySelectorAll('.sec-head').forEach(el => olho.observe(el));
+}
+observar();
+
+function contar(el){
+  const alvo = +el.dataset.count, pre = el.dataset.pre || '', suf = el.dataset.suf || '';
+  if(calmo){ el.textContent = pre + alvo + suf; return; }
+  const dur = 1100, ini = performance.now();
+  (function passo(t){
+    const k = Math.min(1, (t - ini) / dur);
+    const e = 1 - Math.pow(1 - k, 3);
+    el.textContent = pre + Math.round(alvo * e) + suf;
+    if(k < 1) requestAnimationFrame(passo);
+  })(ini);
+}
+const olhoNum = new IntersectionObserver(es => {
+  es.forEach(e => { if(e.isIntersecting){ contar(e.target); olhoNum.unobserve(e.target); } });
+}, {threshold: .6});
+document.querySelectorAll('[data-count]').forEach(el => olhoNum.observe(el));
+
+const bimg = document.querySelector('.banner-img');
+const temParallax = bimg && !calmo && innerWidth > 900;
+if(temParallax) bimg.style.transform = 'scale(1.12)';
+
+const progresso = document.getElementById('progresso');
+const cabecalho = document.querySelector('header');
+let ticScroll = false;
+function atualizarScroll(){
+  if(temParallax){
+    const y = Math.min(scrollY, 700);
+    bimg.style.transform = `translate3d(0, ${y * 0.22}px, 0) scale(1.12)`;
+  }
+  if(progresso){
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progresso.style.width = (max > 0 ? Math.min(100, scrollY / max * 100) : 0) + '%';
+  }
+  if(cabecalho) cabecalho.classList.toggle('scrolled', scrollY > 30);
+}
+addEventListener('scroll', () => {
+  if(ticScroll) return;
+  ticScroll = true;
+  requestAnimationFrame(() => { atualizarScroll(); ticScroll = false; });
+}, {passive: true});
+atualizarScroll();
+
+recuperar();
+renderCats();
+atualizar();
+observar();
+doHash();
+</script>
 </body>
 </html>
