@@ -784,6 +784,13 @@ function cartoesDe(catNome){
   return lista;
 }
 
+/* todos os cartoes de todas as categorias juntos, para a busca global */
+function cartoesTodos(){
+  return CATS.flatMap(c => cartoesDe(c.n));
+}
+
+let modoBusca = false, buscaTexto = '';
+
 const CHAVE = 'emporiodafe:orcamento';
 function salvar(){ try{ localStorage.setItem(CHAVE, JSON.stringify(orcamento)); }catch(e){} }
 function recuperar(){
@@ -848,6 +855,8 @@ function renderCats(){
 }
 
 function abrirCat(nome, scroll = true){
+  modoBusca = false; buscaTexto = '';
+  if(buscaCat) buscaCat.value = '';
   filtro = nome;
   pagina = 1;
   catGrid.hidden = true; prodView.hidden = false;
@@ -860,11 +869,24 @@ function abrirCat(nome, scroll = true){
 }
 
 function verCategorias(scroll = true){
+  modoBusca = false; buscaTexto = '';
+  if(buscaCat) buscaCat.value = '';
   catGrid.hidden = false; prodView.hidden = true;
   if(location.hash) history.replaceState(null, '', location.pathname);
   if(scroll) document.getElementById('catalogo').scrollIntoView({behavior: 'smooth'});
 }
 document.getElementById('voltar').onclick = () => verCategorias();
+
+/* mostra, em qualquer pagina/categoria, os produtos de toda a loja que
+   combinam com o texto digitado na busca */
+function buscarProdutos(q){
+  modoBusca = true;
+  buscaTexto = q;
+  pagina = 1;
+  catGrid.hidden = true; prodView.hidden = false;
+  document.getElementById('catTitle').textContent = `Resultados para "${q}"`;
+  render();
+}
 
 function cartaoHTML(c, i){
   const ref = c.tipo === 'grupo' ? cid(c.ativa) : c.ref;
@@ -900,12 +922,21 @@ if(pgPrev) pgPrev.onclick = () => { if(pagina > 1){ pagina--; render(); document
 if(pgNext) pgNext.onclick = () => { pagina++; render(); document.getElementById('catalogo').scrollIntoView({behavior:'smooth'}); };
 
 function render(){
-  const todos = cartoesDe(filtro);
+  let todos;
+  if(modoBusca){
+    const qc = chave(buscaTexto);
+    todos = cartoesTodos().filter(c => chave(c.n).includes(qc));
+    const cc = document.getElementById('catCount');
+    if(cc) cc.textContent = `${todos.length} ${todos.length === 1 ? 'item encontrado' : 'itens encontrados'}`;
+  } else {
+    todos = cartoesDe(filtro);
+  }
   const totalPaginas = Math.max(1, Math.ceil(todos.length / POR_PAGINA));
   if(pagina > totalPaginas) pagina = totalPaginas;
   const inicio = (pagina - 1) * POR_PAGINA;
   const itens = todos.slice(inicio, inicio + POR_PAGINA);
-  grid.innerHTML = itens.map((c, i) => cartaoHTML(c, i)).join('');
+  grid.innerHTML = itens.length ? itens.map((c, i) => cartaoHTML(c, i)).join('')
+    : (modoBusca ? '<p class="busca-vazia">Nenhum produto encontrado. Tente outra palavra ou chame no WhatsApp que a gente ajuda a achar.</p>' : '');
   marcarImgs();
   renderPager(todos.length, totalPaginas);
 }
@@ -1155,16 +1186,10 @@ atualizarScroll();
 const buscaCat = document.getElementById('buscaCat');
 if(buscaCat){
   buscaCat.addEventListener('input', e => {
-    const q = e.target.value.trim().toLowerCase();
-    if(!prodView.hidden){
-      grid.querySelectorAll('.card').forEach(c => {
-        c.style.display = (c.dataset.nome || '').toLowerCase().includes(q) ? '' : 'none';
-      });
-    } else {
-      catGrid.querySelectorAll('.ccard').forEach(c => {
-        c.style.display = c.dataset.cat.toLowerCase().includes(q) ? '' : 'none';
-      });
-    }
+    const q = e.target.value.trim();
+    if(!q){ verCategorias(false); return; }
+    /* busca produtos em toda a loja, em qualquer categoria e pagina */
+    buscarProdutos(q);
   });
 }
 

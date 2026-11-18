@@ -218,6 +218,7 @@ nav.desk a:hover{color:var(--bordo);border-color:var(--bordo)}
 .voltar svg{width:15px;height:15px}
 .cat-nav h3{font-size:1.25rem;font-weight:700}
 .cat-nav .cnt{font-size:.84rem;color:var(--gray)}
+.busca-vazia{grid-column:1/-1;padding:40px 20px;text-align:center;color:var(--gray);font-size:.92rem;background:#fff;border:1px solid var(--line);border-radius:8px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .25s,transform .25s cubic-bezier(.2,.7,.3,1)}
 .card:hover{border-color:#DCCBB0;box-shadow:0 14px 28px -14px rgba(74,15,23,.4);transform:translateY(-4px)}
