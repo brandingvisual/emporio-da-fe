@@ -518,7 +518,6 @@
     </div>
     <div class="f-bot">
       <span>© 2026 Empório da Fé</span>
-      <span>Site criado como proposta comercial a partir do perfil público @emporiodafe no Instagram. Imagens, horários e descrições devem ser conferidos e confirmados pela loja antes da divulgação oficial. Preços sob consulta até confirmação do lojista.</span>
     </div>
   </div>
 </footer>
@@ -613,56 +612,142 @@ function atualizaStatusLoja(){
 atualizaStatusLoja();
 setInterval(atualizaStatusLoja, 60000);
 
-const PRODUTOS = [
-  {n:"Imagem de Oxalá", c:"Imagens de Orixás", d:"Imagem em resina para assentamento ou altar doméstico.", i:"img/raw-orixas1.jpg"},
-  {n:"Imagem de Iemanjá", c:"Imagens de Orixás", d:"Imagem da rainha do mar, para assentamento e oferendas.", i:"img/raw-orixas1.jpg"},
-  {n:"Imagem de Preto Velho", c:"Imagens de Orixás", d:"Imagem de Preto Velho, entidade de sabedoria e cura.", i:"img/raw-orixas2.jpg"},
-  {n:"Imagem de Ogum", c:"Imagens de Orixás", d:"Imagem de Ogum, orixá da lei e da guerra.", i:"img/raw-orixas2.jpg"},
-  {n:"Guia de Oxum", c:"Guias e Assessórios", d:"Guia de contas na cor de Oxum, para uso no dia a dia ou em giras.", i:"img/raw-guias.jpg"},
-  {n:"Guia de Iemanjá", c:"Guias e Assessórios", d:"Guia de contas na cor de Iemanjá.", i:"img/raw-guias.jpg"},
-  {n:"Guia de Ogum", c:"Guias e Assessórios", d:"Guia de contas na cor de Ogum.", i:"img/raw-guias.jpg"},
-  {n:"Fio de contas sete linhas", c:"Guias e Assessórios", d:"Fio de contas com as sete linhas da Umbanda.", i:"img/raw-guias.jpg"},
-  {n:"Vela de 7 dias", c:"Velas e Artigos Rituais", d:"Vela de queima longa, para pedidos e trabalhos espirituais.", i:"img/raw-velas.jpg"},
-  {n:"Vela colorida ritual", c:"Velas e Artigos Rituais", d:"Vela colorida conforme a finalidade do trabalho.", i:"img/raw-velas.jpg"},
-  {n:"Castiçal de ferro", c:"Velas e Artigos Rituais", d:"Castiçal de ferro para velas de altar.", i:"img/raw-velas.jpg"},
-  {n:"Kit de velas para oferenda", c:"Velas e Artigos Rituais", d:"Kit com velas variadas para oferendas.", i:"img/raw-velas.jpg"},
-  {n:"Defumador de ervas", c:"Ervas e Defumações", d:"Mistura de ervas para defumação e limpeza do ambiente.", i:"img/raw-ervas.jpg"},
-  {n:"Arruda em maço", c:"Ervas e Defumações", d:"Arruda fresca, usada em banhos e defumações.", i:"img/raw-ervas.jpg"},
-  {n:"Kit de ervas para limpeza espiritual", c:"Ervas e Defumações", d:"Kit com ervas variadas para limpeza espiritual.", i:"img/raw-ervas.jpg"},
-  {n:"Banho de descarrego", c:"Banhos", d:"Banho de ervas e flores para descarrego, pronto para uso.", i:"img/raw-banhos.jpg"},
-  {n:"Banho de flores brancas", c:"Banhos", d:"Banho com flores brancas, para paz e limpeza espiritual.", i:"img/raw-banhos.jpg"},
-  {n:"Banho de atração", c:"Banhos", d:"Banho preparado para atração e abertura de caminhos.", i:"img/raw-banhos.jpg"},
-  {n:"Cachaça para oferenda", c:"Bebidas Rituais", d:"Cachaça para oferendas e trabalhos de Exu.", i:"img/raw-bebidas.jpg"},
-  {n:"Vinho tinto ritual", c:"Bebidas Rituais", d:"Vinho tinto para oferendas e rituais.", i:"img/raw-bebidas.jpg"},
-  {n:"Champanhe para Iemanjá", c:"Bebidas Rituais", d:"Champanhe usado em oferendas para Iemanjá.", i:"img/raw-bebidas.jpg"},
-  {n:"Marafo", c:"Bebidas Rituais", d:"Marafo tradicional para rituais de Umbanda.", i:"img/raw-bebidas.jpg"},
-  {n:"Adaga ritual pequena", c:"Adagas e Punhais", d:"Adaga ritual em metal, com pedra na empunhadura.", i:"img/raw-adagas.jpg"},
-  {n:"Punhal cerimonial", c:"Adagas e Punhais", d:"Punhal cerimonial para uso em giras e trabalhos.", i:"img/raw-adagas.jpg"},
-  {n:"Kit de adagas para Exu", c:"Adagas e Punhais", d:"Kit de adagas usado em assentamentos de Exu.", i:"img/raw-adagas.jpg"},
-  {n:"Adaga com pedra", c:"Adagas e Punhais", d:"Adaga decorada com pedra colorida.", i:"img/raw-adagas.jpg"},
-  {n:"Favas de Pó de Cobre", c:"Favas", d:"Pó de cobre para trabalhos e preparos espirituais.", i:"img/raw-favas.jpg"},
-  {n:"Favas de Pó de Ouro", c:"Favas", d:"Pó dourado para trabalhos e preparos espirituais.", i:"img/raw-favas.jpg"},
-  {n:"Favas de Pó de Prata", c:"Favas", d:"Pó prateado para trabalhos e preparos espirituais.", i:"img/raw-favas.jpg"},
-  {n:"Aguidá de barro pequeno", c:"Aguidás e Louças", d:"Aguidá de barro para assentamento, tamanho pequeno.", i:"img/raw-aguidas.jpg"},
-  {n:"Alguidar de barro", c:"Aguidás e Louças", d:"Alguidar de barro para oferendas e preparos.", i:"img/raw-aguidas.jpg"},
-  {n:"Jarra de louça para assentamento", c:"Aguidás e Louças", d:"Jarra de louça usada em assentamentos.", i:"img/raw-aguidas.jpg"},
-  {n:"Saia de axé rodada", c:"Vestuário", d:"Saia rodada, usada em apresentações e giras.", i:"img/raw-tecido.jpg"},
-  {n:"Capa cerimonial", c:"Vestuário", d:"Capa de tecido para uso cerimonial.", i:"img/raw-tecido.jpg"},
-  {n:"Capacete de palha", c:"Vestuário", d:"Indumentária de palha usada em rituais e apresentações.", i:"img/raw-capacete.jpg"},
-  {n:"Colar de palha da costa", c:"Vestuário", d:"Colar de palha da costa, usado em giras e festas.", i:"img/raw-capacete.jpg"}
-];
+/* ==========================================================
+   CATALOGO VIA PLANILHA
+   O catalogo e lido direto da planilha publicada do Google Sheets.
+   Enquanto a planilha nao responder, o site usa a lista de exemplo abaixo.
+   ========================================================== */
+const PLANILHA = '1IShCik9yXkHMZZVuXTAJcjQ3nk-bG7uCj2FlxxeF0Nc';
+const aba = nome => `https://docs.google.com/spreadsheets/d/${PLANILHA}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(nome)}`;
+const CFG = { produtosCSV: aba('Produtos'), categoriasCSV: aba('Categorias') };
 
+const SEMFOTO = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">' +
+  '<rect width="400" height="300" fill="#EDF1EE"/>' +
+  '<path d="M200 205V135" stroke="#AFC2B5" stroke-width="7" stroke-linecap="round"/>' +
+  '<path d="M200 150c0-28 18-48 44-52 0 30-18 48-44 52Z" fill="#C6D6CB"/>' +
+  '<path d="M200 178c0-24-16-42-38-46 0 26 16 42 38 46Z" fill="#AFC2B5"/>' +
+  '<text x="200" y="250" font-family="sans-serif" font-size="15" fill="#8DA396" text-anchor="middle">sem foto</text></svg>');
+
+function fotos(v){
+  v = String(v || '').trim();
+  if(!v) return [SEMFOTO];
+  const m = v.match(/\/d\/([-\w]{20,})/) || v.match(/[?&]id=([-\w]{20,})/) || (/^[-\w]{25,}$/.test(v) ? [0, v] : null);
+  if(m) return [
+    `https://lh3.googleusercontent.com/d/${m[1]}=w900`,
+    `https://drive.google.com/thumbnail?id=${m[1]}&sz=w900`,
+    `https://drive.google.com/uc?export=view&id=${m[1]}`
+  ];
+  if(/^https?:/i.test(v)) return [v];
+  return [/\.(jpg|jpeg|png|webp|avif)$/i.test(v) ? `img/${v}` : `img/${v}.jpg`];
+}
+function imgTag(v, alt){
+  const l = fotos(v);
+  const fb = l.slice(1).join('|');
+  return `<img src="${l[0]}"${fb ? ` data-fb="${fb}"` : ''} onerror="proxFoto(this)" onload="this.classList.add('ok')" alt="${alt||''}" loading="lazy" decoding="async">`;
+}
+window.proxFoto = function(img){
+  const fb = (img.dataset.fb || '').split('|').filter(Boolean);
+  if(!fb.length){ img.onerror = null; img.src = SEMFOTO; return; }
+  img.src = fb.shift();
+  img.dataset.fb = fb.join('|');
+};
+
+function parseCSV(txt){
+  const linhas = [];
+  let campo = '', linha = [], aspas = false;
+  txt = txt.replace(/\r\n?/g, '\n');
+  for(let i=0; i<txt.length; i++){
+    const c = txt[i];
+    if(aspas){
+      if(c === '"'){ if(txt[i+1] === '"'){ campo += '"'; i++; } else aspas = false; }
+      else campo += c;
+    } else if(c === '"') aspas = true;
+    else if(c === ','){ linha.push(campo); campo = ''; }
+    else if(c === '\n'){ linha.push(campo); linhas.push(linha); linha = []; campo = ''; }
+    else campo += c;
+  }
+  if(campo.length || linha.length){ linha.push(campo); linhas.push(linha); }
+  return linhas.filter(l => l.some(c => c.trim() !== ''));
+}
+const chave = s => (s||'').normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+
+function precoNum(v){
+  const n = String(v||'').replace(/[^\d,.-]/g,'').replace(/\.(?=\d{3}(,|$))/g,'').replace(',', '.');
+  const f = parseFloat(n);
+  return isNaN(f) ? 0 : f;
+}
+function precoFmt(n){ return 'R$ ' + n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2}); }
+function formatarPreco(v){
+  const s = String(v||'').trim();
+  if(!s) return '';
+  const n = precoNum(s);
+  return n > 0 ? precoFmt(n) : '';
+}
+
+function objetos(linhas){
+  if(!linhas.length) return [];
+  const cab = linhas[0].map(chave);
+  return linhas.slice(1).map(l => {
+    const o = {};
+    cab.forEach((c,i) => o[c] = (l[i]||'').trim());
+    return o;
+  });
+}
+async function daPlanilha(url){
+  const r = await fetch(url, {cache:'no-store'});
+  if(!r.ok) throw new Error('HTTP ' + r.status);
+  return objetos(parseCSV(await r.text()));
+}
+
+async function carregarCatalogo(){
+  try{
+    const [prods, cats] = await Promise.all([
+      daPlanilha(CFG.produtosCSV),
+      daPlanilha(CFG.categoriasCSV).catch(()=>[])
+    ]);
+    const ativos = prods.filter(p => p.nome && chave(p.ativo||'sim') !== 'nao');
+    if(!ativos.length) throw new Error('planilha sem produtos ativos');
+
+    PRODUTOS.length = 0;
+    ativos
+      .sort((a,b) => (+a.ordem||99999) - (+b.ordem||99999))
+      .forEach(p => PRODUTOS.push({
+        n: p.nome, c: p.categoria, d: p.descricao || '', i: p.foto || '',
+        sku: p.sku || '', pr: formatarPreco(p.preco)
+      }));
+
+    CATS.length = 0;
+    if(cats.length){
+      cats.filter(c => c.nome)
+          .sort((a,b) => (+a.ordem||99999) - (+b.ordem||99999))
+          .forEach(c => CATS.push({n: c.nome, d: c.descricao || '', i: c.foto || ''}));
+    } else {
+      [...new Set(PRODUTOS.map(p => p.c))].forEach(n => CATS.push({n, d: '', i: ''}));
+    }
+    CATS.forEach(c => { if(!c.i){ const p = PRODUTOS.find(x => x.c === c.n && x.i); if(p) c.i = p.i; } });
+    PRODUTOS.forEach(p => { if(!p.i){ const c = CATS.find(x => x.n === p.c); if(c) p.i = c.i; } });
+    return true;
+  }catch(e){
+    console.warn('[catalogo] Nao consegui ler a planilha, usando a lista de exemplo. Erro:', e.message);
+    return false;
+  }
+}
+
+/* lista de exemplo: usada so enquanto a planilha nao responde */
+const PRODUTOS = [
+  {n:"Imagem de Oxalá", c:"Imagens e Orixás", d:"Imagem para altar, assentamento ou trabalhos espirituais.", i:"img/raw-orixas1.jpg"},
+  {n:"Vela de 7 dias", c:"Velas", d:"Vela de queima longa, para pedidos e trabalhos espirituais.", i:"img/raw-velas.jpg"},
+  {n:"Defumador de ervas", c:"Defumadores e Incensos", d:"Mistura de ervas para defumação e limpeza do ambiente.", i:"img/raw-ervas.jpg"},
+  {n:"Banho de descarrego", c:"Banhos", d:"Banho de ervas e flores para descarrego, pronto para uso.", i:"img/raw-banhos.jpg"},
+  {n:"Guia de Oxum", c:"Guias, Colares e Amuletos", d:"Guia de contas na cor de Oxum.", i:"img/raw-guias.jpg"}
+];
 const CATS = [
-  {n:"Imagens de Orixás", i:"img/raw-orixas1.jpg", d:"Imagens e produtos sagrados"},
-  {n:"Guias e Assessórios", i:"img/raw-guias.jpg", d:"Guias de contas nas cores de cada orixá"},
-  {n:"Velas e Artigos Rituais", i:"img/raw-velas.jpg", d:"Velas, castiçais e kits para oferenda"},
-  {n:"Ervas e Defumações", i:"img/raw-ervas.jpg", d:"Defumadores e ervas para limpeza"},
-  {n:"Banhos", i:"img/raw-banhos.jpg", d:"Banhos prontos para descarrego e atração"},
-  {n:"Bebidas Rituais", i:"img/raw-bebidas.jpg", d:"Para oferendas e trabalhos"},
-  {n:"Adagas e Punhais", i:"img/raw-adagas.jpg", d:"Para assentamentos e giras"},
-  {n:"Favas", i:"img/raw-favas.jpg", d:"Pós de cobre, ouro e prata"},
-  {n:"Aguidás e Louças", i:"img/raw-aguidas.jpg", d:"Barro e louça para assentamentos"},
-  {n:"Vestuário", i:"img/raw-tecido.jpg", d:"Saias, capas e palha da costa"}
+  {n:"Imagens e Orixás", i:"img/raw-orixas1.jpg", d:"Imagens e produtos sagrados"},
+  {n:"Velas", i:"img/raw-velas.jpg", d:"Velas para rituais e oferendas"},
+  {n:"Defumadores e Incensos", i:"img/raw-ervas.jpg", d:"Limpeza espiritual e trabalhos"},
+  {n:"Banhos", i:"img/raw-banhos.jpg", d:"Descarrego, atração e outras finalidades"},
+  {n:"Guias, Colares e Amuletos", i:"img/raw-guias.jpg", d:"Guias, colares e amuletos de proteção"}
 ];
 
 let orcamento = [], filtro = CATS[0].n;
@@ -699,7 +784,7 @@ function mudarQtd(n, d){
 function renderCats(){
   catGrid.innerHTML = CATS.map((c, i) => `
     <button class="ccard" data-cat="${c.n}" style="--i:${i}">
-      <img src="${c.i}" alt="${c.n}" loading="lazy" decoding="async" onload="this.classList.add('ok')">
+      ${imgTag(c.i, c.n)}
       <span class="ccard-in">
         <b>${c.n}</b>
         <i>${PRODUTOS.filter(p => p.c === c.n).length} itens
@@ -733,14 +818,14 @@ function render(){
   grid.innerHTML = itens.map((p, i) => `
     <article class="card" data-prod="${p.n}" style="--i:${i}">
       <div class="card-img">
-        <img src="${p.i}" alt="${p.n}" loading="lazy" decoding="async" onload="this.classList.add('ok')">
+        ${imgTag(p.i, p.n)}
         <span class="card-tag">${p.c}</span>
       </div>
       <div class="card-in">
         <h3>${p.n}</h3>
         <p>${p.d}</p>
         <div class="card-foot">
-          <span class="price">Sob consulta</span>
+          <span class="price">${p.pr || 'Sob consulta'}</span>
           <button class="add${naLista(p.n) ? ' done' : ''}" data-add="${p.n}">${naLista(p.n) ? '&#10003; ' + qtdDe(p.n) + ' na lista' : '+ Orçamento'}</button>
         </div>
       </div>
@@ -769,11 +854,11 @@ function pintarModal(){
   if(!p) return;
   const q = qtdDe(p.n);
   modalIn.innerHTML = `
-    <div class="m-img"><img src="${p.i}" alt="${p.n}" loading="lazy"></div>
+    <div class="m-img">${imgTag(p.i, p.n)}</div>
     <div class="m-txt">
       <span class="m-cat">${p.c}</span>
       <h3>${p.n}</h3>
-      <p class="m-preco">Preço sob consulta</p>
+      <p class="m-preco">${p.pr || 'Preço sob consulta'}</p>
       <p>${p.d || ''}</p>
       <div class="m-acao">
         ${q ? `<div class="qtd">
@@ -784,7 +869,7 @@ function pintarModal(){
                <button class="btn btn-out" data-add="${p.n}">Tirar da lista</button>`
              : `<button class="btn btn-bordo" data-add="${p.n}">+ Adicionar ao orçamento</button>`}
       </div>
-      <a class="m-wa" href="${waLink('Olá! Vim pelo site do Empório da Fé. Tenho interesse neste item: ' + p.n + '. Ainda está disponível?')}" target="_blank" rel="noopener">Perguntar sobre este item no WhatsApp</a>
+      <a class="m-wa" href="${waLink('Olá! Vim pelo site do Empório da Fé. Tenho interesse neste item: ' + p.n + (p.pr ? ', vi no site por ' + p.pr : '') + '. Ainda está disponível?')}" target="_blank" rel="noopener">Perguntar sobre este item no WhatsApp</a>
     </div>`;
 }
 if(modal){
@@ -824,8 +909,8 @@ function atualizar(){
     const p = PRODUTOS.find(x => x.n === it.n);
     if(!p) return '';
     return `<div class="d-item">
-      <div class="d-thumb"><img src="${p.i}" alt="" loading="lazy" onload="this.classList.add('ok')"></div>
-      <div class="d-nome"><b>${p.n}</b><span>${p.c}</span></div>
+      <div class="d-thumb">${imgTag(p.i, '')}</div>
+      <div class="d-nome"><b>${p.n}</b><span>${p.c}${p.pr ? ' · ' + p.pr : ''}</span></div>
       <div class="qtd sm">
         <button data-q="-1" data-qn="${p.n}" aria-label="Menos um">-</button>
         <b>${it.q}</b>
@@ -851,7 +936,7 @@ document.getElementById('send').onclick = () => {
   msg += `\nGostaria de um orçamento ${n === 1 ? 'deste item' : 'destes ' + n + ' itens'}:\n\n`;
   msg += orcamento.map((it, i) => {
     const p = PRODUTOS.find(y => y.n === it.n) || {};
-    return `${i + 1}. ${it.q}x ${it.n}`;
+    return `${i + 1}. ${it.q}x ${it.n}${p.pr ? ' — ' + p.pr + ' cada' : ''}`;
   }).join('\n');
   msg += '\n\nPodem confirmar valor e disponibilidade?';
   if(obs) msg += `\n\nObservação: ${obs}`;
@@ -1014,11 +1099,14 @@ if(!sessionStorage.getItem('emporiodafe:popupSaida')){
   });
 }
 
-recuperar();
-renderCats();
-atualizar();
-observar();
-doHash();
+carregarCatalogo().then(() => {
+  filtro = CATS.length ? CATS[0].n : filtro;
+  recuperar();
+  renderCats();
+  atualizar();
+  observar();
+  doHash();
+});
 </script>
 </body>
 </html>
