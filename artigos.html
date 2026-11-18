@@ -22,7 +22,7 @@
   <div class="wrap">
     <ul>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg> Rua Nilo Peçanha, 54 · Centro Histórico · Penedo/AL</li>
-      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span id="status">Seg a sex: 8h às 15h · Sáb: 7h às 13h</span></li>
+      <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> <span id="lojaStatus" class="status-pill">Aberto agora</span><span class="status-hrs">Seg a sex: 8h às 15h · Sáb: 7h às 13h</span></li>
       <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5c0 8 7 15 15 15l2-3-4-2-2 2a13 13 0 0 1-6-6l2-2-2-4-3 2Z"/></svg> (82) 9 9645-1238</li>
     </ul>
     <ul>
@@ -189,6 +189,22 @@
 const WA = 'https://wa.me/558296451238';
 const waLink = msg => WA + '?text=' + encodeURIComponent(msg);
 document.querySelectorAll('[data-msg]').forEach(a => { a.href = waLink(a.dataset.msg); });
+
+function atualizaStatusLoja(){
+  const el = document.getElementById('lojaStatus');
+  if(!el) return;
+  const agora = new Date();
+  const dia = agora.getDay();
+  const min = agora.getHours()*60 + agora.getMinutes();
+  let aberto = false;
+  if(dia>=1 && dia<=5){ aberto = min>=8*60 && min<15*60; }
+  else if(dia===6){ aberto = min>=7*60 && min<13*60; }
+  el.textContent = aberto ? 'Aberto agora' : 'Fechado agora';
+  el.classList.toggle('status-open', aberto);
+  el.classList.toggle('status-closed', !aberto);
+}
+atualizaStatusLoja();
+setInterval(atualizaStatusLoja, 60000);
 
 const mobnav = document.getElementById('mobnav');
 const burgerBtn = document.getElementById('burger');
