@@ -787,7 +787,7 @@ function renderCats(){
   const footCats = document.getElementById('footCats');
   if(footCats) footCats.innerHTML = CATS.map(c => `<a href="#catalogo" data-cat="${c.n}">${c.n}</a>`).join('');
   const numCats = document.getElementById('numCats'), numCatsDup = document.getElementById('numCatsDup');
-  if(numCats){ numCats.dataset.count = CATS.length; numCats.textContent = CATS.length; }
+  if(numCats){ numCats.dataset.count = CATS.length; if(typeof contar === 'function') contar(numCats); else numCats.textContent = CATS.length; }
   if(numCatsDup) numCatsDup.textContent = CATS.length;
 }
 
