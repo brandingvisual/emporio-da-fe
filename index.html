@@ -833,7 +833,7 @@ let modoBusca = false, buscaTexto = '';
 const STOPWORDS = new Set(['de','da','do','das','dos','e','em','com','para','a','o','as','os','um','uma','no','na','pra']);
 
 function palavras(texto){
-  return chave(texto).split(/[^a-z0-9]+/).filter(Boolean);
+  return chave(texto).replace(/[°ºª]/g, '').split(/[^a-z0-9]+/).filter(Boolean);
 }
 function palavrasChave(texto){
   const p = palavras(texto).filter(w => !STOPWORDS.has(w));
@@ -861,8 +861,11 @@ function distancia(a, b){
    tolerancia, null = nao bate */
 function pontuarPalavra(busca, alvo){
   if(alvo === busca) return 0;
+  /* palavra muito curta (ex: "m" de tamanho médio) só bate se for igual,
+     senão qualquer letra solta "bate" por estar contida em outra palavra */
+  if(busca.length < 3 || alvo.length < 3) return null;
   if(alvo.includes(busca) || busca.includes(alvo)) return 0.5;
-  const tolerancia = busca.length <= 3 ? 0 : busca.length <= 6 ? 1 : 2;
+  const tolerancia = busca.length <= 6 ? 1 : 2;
   const d = distancia(busca, alvo);
   return d <= tolerancia ? 1 + d : null;
 }
