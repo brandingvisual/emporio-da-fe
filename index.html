@@ -859,8 +859,12 @@ function distancia(a, b){
 }
 /* 0 = igual, 0.5 = uma contem a outra, 1+distancia = parecido dentro da
    tolerancia, null = nao bate */
-function pontuarPalavra(busca, alvo){
+function pontuarPalavra(busca, alvo, ehUltima){
   if(alvo === busca) return 0;
+  /* a ultima palavra digitada pode estar sendo escrita ainda (busca ao
+     vivo, tecla a tecla), então vale casar por prefixo mesmo sendo curta -
+     ex.: "n8" de "vela n8 bicolor" batendo enquanto a pessoa digita só "n" */
+  if(ehUltima && alvo.startsWith(busca)) return 0.25;
   /* palavra muito curta (ex: "m" de tamanho médio) só bate se for igual,
      senão qualquer letra solta "bate" por estar contida em outra palavra */
   if(busca.length < 3 || alvo.length < 3) return null;
@@ -875,10 +879,12 @@ function pontuarPalavra(busca, alvo){
 function pontuarCartao(buscaPalavras, cartao){
   const alvo = palavrasChave(cartao.n + ' ' + (cartao.d || ''));
   let total = 0;
-  for(const bp of buscaPalavras){
+  for(let i = 0; i < buscaPalavras.length; i++){
+    const bp = buscaPalavras[i];
+    const ehUltima = i === buscaPalavras.length - 1;
     let melhor = null;
     for(const av of alvo){
-      const p = pontuarPalavra(bp, av);
+      const p = pontuarPalavra(bp, av, ehUltima);
       if(p !== null && (melhor === null || p < melhor)) melhor = p;
     }
     if(melhor === null) return null;
@@ -1047,7 +1053,7 @@ let produtoAberto = null;
 function abrirProduto(ref){
   let grupo = null, p = null;
   if(String(ref).startsWith('grupo:')){
-    const c = cartoesDe(filtro).find(x => x.tipo === 'grupo' && x.ref === ref);
+    const c = cartoesTodos().find(x => x.tipo === 'grupo' && x.ref === ref);
     if(!c) return;
     grupo = c;
     p = c.ativa;
@@ -1072,8 +1078,16 @@ function pintarModal(){
   const ref = cid(p);
   const q = qtdDe(ref);
   const chips = grupo ? `<div class="vchips">${grupo.variantes.map(v => `<button class="vchip${v === p ? ' on' : ''}" data-vsel="${grupo.ref}" data-vcid="${cid(v)}">${v.v}</button>`).join('')}</div>` : '';
+  /* seta de navegacao entre as fotos das variantes, quando houver mais de uma */
+  const navFotos = grupo && grupo.variantes.length > 1 ? `
+    <button class="m-img-nav prev" data-vnav="prev" aria-label="Variação anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>
+    </button>
+    <button class="m-img-nav next" data-vnav="next" aria-label="Próxima variação">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+    </button>` : '';
   modalIn.innerHTML = `
-    <div class="m-img">${imgTag(p.i, p.n)}</div>
+    <div class="m-img">${imgTag(p.i, p.n)}${navFotos}</div>
     <div class="m-txt">
       <span class="m-cat">${p.c}</span>
       <h3>${p.n}${grupo ? ' — ' + p.v : ''}</h3>
@@ -1111,6 +1125,21 @@ document.addEventListener('click', e => {
     if(grupo && grupo.ref === vsel.dataset.vsel){
       const nv = grupo.variantes.find(v => cid(v) === vsel.dataset.vcid);
       if(nv){ grupo.ativa = nv; produtoAberto.p = nv; pintarModal(); }
+    }
+    return;
+  }
+
+  const vnav = e.target.closest('[data-vnav]');
+  if(vnav){
+    e.preventDefault(); e.stopPropagation();
+    const grupo = produtoAberto && produtoAberto.grupo;
+    if(grupo){
+      const i = grupo.variantes.indexOf(grupo.ativa);
+      const n = grupo.variantes.length;
+      const novo = vnav.dataset.vnav === 'next' ? (i + 1) % n : (i - 1 + n) % n;
+      grupo.ativa = grupo.variantes[novo];
+      produtoAberto.p = grupo.ativa;
+      pintarModal();
     }
     return;
   }
