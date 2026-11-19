@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emporio-da-fe.pages.dev/sitemap.xml

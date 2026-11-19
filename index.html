@@ -3,17 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Empório da Fé | Artigos religiosos de Umbanda e Candomblé em Penedo AL</title>
-<meta name="description" content="Casa de Umbanda e Candomblé em Penedo, Alagoas. Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento e fale pelo WhatsApp.">
+<title>Empório da Fé | Loja de Artigos Religiosos de Umbanda e Candomblé em Penedo, Alagoas</title>
+<meta name="description" content="Empório da Fé: loja de artigos religiosos de Umbanda e Candomblé em Penedo, Alagoas. Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento e fale pelo WhatsApp.">
+<meta name="keywords" content="Empório da Fé, Empório da Fé Penedo, Empório da Fé Alagoas, artigos religiosos Penedo, loja de umbanda Penedo, loja de candomblé Alagoas, artigos afro-brasileiros Penedo">
 <meta name="author" content="Empório da Fé">
 <meta name="theme-color" content="#6B1620">
 <meta name="robots" content="index, follow">
+<link rel="canonical" href="https://emporio-da-fe.pages.dev/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Empório da Fé">
-<meta property="og:title" content="Empório da Fé | Artigos religiosos de Umbanda e Candomblé">
+<meta property="og:url" content="https://emporio-da-fe.pages.dev/">
+<meta property="og:title" content="Empório da Fé | Artigos Religiosos de Umbanda e Candomblé em Penedo, Alagoas">
 <meta property="og:description" content="Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento pelo catálogo e envie pelo WhatsApp.">
+<meta property="og:image" content="https://emporio-da-fe.pages.dev/img/banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Empório da Fé | Artigos Religiosos de Umbanda e Candomblé em Penedo, Alagoas">
+<meta name="twitter:description" content="Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. Monte seu orçamento pelo catálogo e envie pelo WhatsApp.">
+<meta name="twitter:image" content="https://emporio-da-fe.pages.dev/img/banner.jpg">
+<meta name="geo.region" content="BR-AL">
+<meta name="geo.placename" content="Penedo">
+<meta name="geo.position" content="-10.2903;-36.5864">
+<meta name="ICBM" content="-10.2903, -36.5864">
 
 <link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="img/favicon-32.png" type="image/png">
@@ -24,15 +36,39 @@
   "@context": "https://schema.org",
   "@type": ["Store", "LocalBusiness"],
   "name": "Empório da Fé",
-  "description": "Casa de Umbanda e Candomblé com artigos religiosos afro-brasileiros em Penedo, Alagoas.",
+  "alternateName": "Empório da Fé Alagoas",
+  "description": "Loja de artigos religiosos de Umbanda e Candomblé em Penedo, Alagoas: imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária.",
+  "url": "https://emporio-da-fe.pages.dev/",
+  "image": "https://emporio-da-fe.pages.dev/img/banner.jpg",
   "telephone": "+5582996451238",
+  "priceRange": "$$",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rua Nilo Peçanha, 54, Centro Histórico",
     "addressLocality": "Penedo",
     "addressRegion": "AL",
+    "postalCode": "57200-000",
     "addressCountry": "BR"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -10.2903,
+    "longitude": -36.5864
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "15:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "07:00",
+      "closes": "13:00"
+    }
+  ],
   "areaServed": { "@type": "Place", "name": "Penedo e Baixo São Francisco, Alagoas" },
   "sameAs": ["https://www.instagram.com/emporiodafe/"]
 }
@@ -103,7 +139,7 @@
         Fazemos entregas em Penedo e região
       </div>
       <div class="label">Casa de Umbanda e Candomblé em Penedo, Alagoas</div>
-      <h1>Sua caminhada com axé começa aqui.</h1>
+      <h1>Empório da Fé: sua caminhada com axé começa aqui, em Penedo, Alagoas.</h1>
       <p>Imagens de Orixás, guias, velas, ervas, bebidas rituais, adagas e indumentária. A maior loja de artigos religiosos do Baixo São Francisco.</p>
       <div class="banner-cta">
         <a href="https://wa.me/558296451238" data-msg="Olá! Vim pelo site do Empório da Fé e gostaria de saber mais sobre os produtos." target="_blank" rel="noopener" class="btn btn-wa">
@@ -791,6 +827,63 @@ function cartoesTodos(){
 
 let modoBusca = false, buscaTexto = '';
 
+/* ===== busca tolerante a erro de digitação e palavra fora de ordem =====
+   "fava omolu" deve achar "FAVA DE OMOLU", "contra olho grnde" deve achar
+   "CONTRA OLHO GRANDE" mesmo com erro de digitação. */
+const STOPWORDS = new Set(['de','da','do','das','dos','e','em','com','para','a','o','as','os','um','uma','no','na','pra']);
+
+function palavras(texto){
+  return chave(texto).split(/[^a-z0-9]+/).filter(Boolean);
+}
+function palavrasChave(texto){
+  const p = palavras(texto).filter(w => !STOPWORDS.has(w));
+  return p.length ? p : palavras(texto); /* se so sobrar stopword, usa tudo */
+}
+/* distancia de edicao (Levenshtein), para tolerar erro de digitação */
+function distancia(a, b){
+  if(a === b) return 0;
+  const la = a.length, lb = b.length;
+  if(!la) return lb;
+  if(!lb) return la;
+  let anterior = Array.from({length: lb + 1}, (_, j) => j);
+  for(let i = 1; i <= la; i++){
+    const atual = [i];
+    for(let j = 1; j <= lb; j++){
+      atual[j] = a[i-1] === b[j-1]
+        ? anterior[j-1]
+        : 1 + Math.min(anterior[j-1], anterior[j], atual[j-1]);
+    }
+    anterior = atual;
+  }
+  return anterior[lb];
+}
+/* 0 = igual, 0.5 = uma contem a outra, 1+distancia = parecido dentro da
+   tolerancia, null = nao bate */
+function pontuarPalavra(busca, alvo){
+  if(alvo === busca) return 0;
+  if(alvo.includes(busca) || busca.includes(alvo)) return 0.5;
+  const tolerancia = busca.length <= 3 ? 0 : busca.length <= 6 ? 1 : 2;
+  const d = distancia(busca, alvo);
+  return d <= tolerancia ? 1 + d : null;
+}
+/* pontua um cartao pela busca: soma o melhor encaixe de cada palavra
+   digitada contra as palavras do nome/descricao do produto, em qualquer
+   ordem; retorna null se alguma palavra digitada nao encontrou nada parecido */
+function pontuarCartao(buscaPalavras, cartao){
+  const alvo = palavrasChave(cartao.n + ' ' + (cartao.d || ''));
+  let total = 0;
+  for(const bp of buscaPalavras){
+    let melhor = null;
+    for(const av of alvo){
+      const p = pontuarPalavra(bp, av);
+      if(p !== null && (melhor === null || p < melhor)) melhor = p;
+    }
+    if(melhor === null) return null;
+    total += melhor;
+  }
+  return total;
+}
+
 const CHAVE = 'emporiodafe:orcamento';
 function salvar(){ try{ localStorage.setItem(CHAVE, JSON.stringify(orcamento)); }catch(e){} }
 function recuperar(){
@@ -924,8 +1017,12 @@ if(pgNext) pgNext.onclick = () => { pagina++; render(); document.getElementById(
 function render(){
   let todos;
   if(modoBusca){
-    const qc = chave(buscaTexto);
-    todos = cartoesTodos().filter(c => chave(c.n).includes(qc));
+    const bp = palavrasChave(buscaTexto);
+    todos = cartoesTodos()
+      .map(c => ({c, pontos: bp.length ? pontuarCartao(bp, c) : null}))
+      .filter(x => x.pontos !== null)
+      .sort((a, b) => a.pontos - b.pontos)
+      .map(x => x.c);
     const cc = document.getElementById('catCount');
     if(cc) cc.textContent = `${todos.length} ${todos.length === 1 ? 'item encontrado' : 'itens encontrados'}`;
   } else {
