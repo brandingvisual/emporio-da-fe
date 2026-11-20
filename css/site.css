@@ -435,6 +435,8 @@ footer .logo span{color:rgba(255,255,255,.5)}
   .card-in{padding:12px}
   .card-in h3{font-size:.9rem}
   .card-in p{display:none}
+  .card-foot{flex-direction:column;align-items:stretch;gap:8px}
+  .add{width:100%;text-align:center}
   .nums .wrap{grid-template-columns:1fr 1fr;gap:18px}
   .topbar .wrap{justify-content:center}
   .topbar ul li:first-child{display:none}
